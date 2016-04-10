@@ -1,7 +1,12 @@
 theGreenFox.controller('mainController',
-	['$scope',
-	function($scope){
+	['$scope', 'commandsService',
+	function($scope, commandsService){
 
-    console.log("here at main");
+	$scope.welcome = {
+		message: "Welcome to jofftiquez.com \n\nType '--help' to see available commands. \n\nIf you are not familiar with command line you can swith to"
+	}
 
+	$scope.handleCommand = function () {
+
+	}
 }])

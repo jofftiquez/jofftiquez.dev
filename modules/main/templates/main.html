@@ -1,6 +1,20 @@
-<div class="container">
+<div class="container container-landing-page" ng-controller="focusController" ng-click="focusForever()">
     <div class="row">
-        <h1>This is a test</h1>
-        
+        <div class="col-xs-12">
+            <div class="console-landing-page">
+                <pre class="commad-result">{{welcome.message}} <a class="command-line-link" href="">pretty mode</a>.</pre>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon input-group-addon-console">
+                        <b>guest@jofftiquez.com</b>
+                        <b class="console-path"> / $</b>
+                    </span>
+                    <form ng-submit="handleCommand()">
+                        <input id="input" type="text" class="form-control form-control-console">
+                        <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
