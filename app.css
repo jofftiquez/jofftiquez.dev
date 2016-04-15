@@ -4,6 +4,10 @@ html, body{
     color: white;
 }
 
+pre{
+    font-family: 'Roboto Mono';
+}
+
 ::selection {color:white;background:white;}
 ::-moz-selection {color:white;background:white;}
 
@@ -11,7 +15,8 @@ html, body{
     background-color: #555753;
     width: 100%;
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
 }
 
 .console-landing-page{
@@ -52,7 +57,7 @@ html, body{
     box-shadow: none !important;
 }
 
-.commad-result{
+.command-result{
     font-family: 'Roboto Mono';
     padding: 0 !important;
     border-radius: 0;
@@ -70,4 +75,16 @@ html, body{
 .command-line-link:focus,
 .command-line-link:active{
     color: white;
+}
+
+#directory-here{
+    color: #8AE234;
+    font-size: 12px;
+    line-height: 35px;
+}
+
+.entered-command{
+    color: white;
+    font-size: 14px;
+    margin-left: 12px;
 }
