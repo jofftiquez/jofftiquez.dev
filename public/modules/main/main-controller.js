@@ -13,11 +13,7 @@ theGreenFox.controller('mainController',
 	$scope.dateTime = "";
 	$scope.message = {};
 	$scope.hideOriginalInput = false;
-
-	$scope.$watch('message', function () {
-		console.log($scope.message)
-	},true);
-
+	
 	$scope.handleCommand = function () {
 		
 		if ($scope.commandEntered.input) {
