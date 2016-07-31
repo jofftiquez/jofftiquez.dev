@@ -65,7 +65,7 @@ theGreenFox.controller('contactController',
 
 		$http({
     		method: 'POST',
-    		url: 'http://localhost:7777/api/mailer',
+    		url: 'http://jofftiquez.herokuapp.com/api/mailer',
     		data:$scope.message
     	}).then(function successCallback(response) {
     		$scope.hideOriginalInput = true;
