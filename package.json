@@ -1,0 +1,22 @@
+{
+  "name": "mycure-admin-app",
+  "version": "1.0.0",
+  "description": "Cure is coming.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:mycureapi/mycure-admin-app-v1.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "homepage": "https://bitbucket.org/mycureapi/mycure-admin-app-v1/#readme",
+  "dependencies": {
+    "azure-storage": "~0.10.0",
+    "express": "^4.13.4",
+    "sendgrid": "^3.0.11"
+  }
+}
