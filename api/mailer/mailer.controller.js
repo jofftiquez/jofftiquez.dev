@@ -10,9 +10,9 @@ module.exports = function() {
 			"personalizations": [
 				{
 					"to": [
-					{
-						"email": "jofftiquez@gmail.com"
-					}
+						{
+							"email": "jofftiquez@gmail.com"
+						}
 					],
 					"subject": req.body.subject
 				}
@@ -30,11 +30,9 @@ module.exports = function() {
 		request.method = 'POST'
 		request.path = '/v3/mail/send'
 		sendgrid.API(request, function (response) {
-
 			if (response.statusCode > 400) {
 				res.status(response.statusCode).json({message:'Error'}); return;
 			}
-
 			res.status(response.statusCode).json({message:'Success'});
 		})
 	}	

@@ -6,6 +6,10 @@ theGreenFox.service('commandsService', ['$http', '$q',
     }
 
     return {
+        version: function () {
+            var date = new Date();
+            return "Copyrigt (c) Jofferson Ramirez Tiquez "+date.getFullYear()+" v1.0.1";
+        },
 
         endpoint: function () {
             return "http://jofftiquez.herokuapp.com";
