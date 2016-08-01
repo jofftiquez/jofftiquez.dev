@@ -7,6 +7,10 @@ theGreenFox.service('commandsService', ['$http', '$q',
 
     return {
 
+        endpoint: function () {
+            return "http://jofftiquez.herokuapp.com";
+        },
+
         welcome: function () {
             return $http.get('fixtures/welcome.json')
                 .then(function(response) {

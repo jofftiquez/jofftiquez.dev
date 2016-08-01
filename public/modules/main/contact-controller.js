@@ -13,8 +13,11 @@ theGreenFox.controller('contactController',
 	$scope.message = {};
 	$scope.currentCommand = "Enter your email :";
 	$scope.hideOriginalInput = false;
+	var endpoint = commandsService.endpoint(); 
 	var lastCommand = "Enter your email :";
 	var state = 0;
+
+	console.log(endpoint);
 	
 	$scope.handleCommand = function () {
 		var command = $scope.commandEntered.input;
@@ -65,7 +68,7 @@ theGreenFox.controller('contactController',
 
 		$http({
     		method: 'POST',
-    		url: 'http://jofftiquez.herokuapp.com/api/mailer',
+    		url: endpoint+'/api/mailer',
     		data:$scope.message
     	}).then(function successCallback(response) {
     		$scope.hideOriginalInput = true;
