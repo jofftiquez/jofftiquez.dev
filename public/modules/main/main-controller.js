@@ -57,7 +57,7 @@ theGreenFox.controller('mainController',
 	}
 
 	$scope.prettyMode = function(){
-		$scope.commandEntered.input = "Pretty mode not yet available.";
+		$scope.commandEntered.input = "pretty mode not yet available.";
 		$scope.handleCommand();
 	}
 
