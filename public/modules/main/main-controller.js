@@ -22,6 +22,7 @@ theGreenFox.controller('mainController',
 
 			if (command === '--help' || command === 'fox' ) {
 				seekHelp();
+				$scope.gotoBottom();
 				return;
 			}
 
@@ -39,10 +40,12 @@ theGreenFox.controller('mainController',
 						case 'facebook': printCommand(); $window.open($scope.links.facebook, '_blank'); break;
 						case 'contact': printCommand(); performContact(); break;
 					}
+					$scope.gotoBottom();
 					return;
 				}else{
 					printCommand();
 					printError('fox "'+secondCommand+'" Command not found, type --help to see list of commands.');
+					$scope.gotoBottom();
 					return;
 				}
 			}
@@ -57,7 +60,7 @@ theGreenFox.controller('mainController',
 	}
 
 	$scope.prettyMode = function(){
-		$scope.commandEntered.input = "pretty mode not yet available.";
+		$scope.commandEntered.input = "pretty mode not yet available";
 		$scope.handleCommand();
 	}
 

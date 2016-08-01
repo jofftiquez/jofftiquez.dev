@@ -7,21 +7,20 @@ function($stateProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
     $stateProvider
-    .state('landing-page', {
-        url: '/',
-        templateUrl: 'modules/main/main.html',
-        controller: 'mainController'
-    })
-    .state('contact', {
-        url: '/contact',
-        templateUrl: 'modules/main/contact.html',
-        controller: 'contactController'
-    })
-    .state('about', {
-        url: '/about',
-        templateUrl: 'modules/main/about.html',
-        controller: 'aboutController'
-    })
+        .state('landing-page', {
+            url: '/',
+            templateUrl: 'modules/main/main.html',
+            controller: 'mainController'
+        })
+        .state('contact', {
+            url: '/contact',
+            templateUrl: 'modules/contact/contact.html',
+            controller: 'contactController'
+        })
+        .state('about', {
+            templateUrl: 'modules/main/about.html',
+            controller: 'aboutController'
+        })
 
     // $locationProvider.html5Mode(true);
 
