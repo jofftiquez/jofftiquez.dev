@@ -8,7 +8,7 @@ theGreenFox.service('commandsService', ['$http', '$q',
     return {
 
         endpoint: function () {
-            return "http://jofftiquez.herokuapp.com";
+            return "http://localhost:7777";
         },
 
         welcome: function () {
