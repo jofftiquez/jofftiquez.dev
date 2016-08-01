@@ -2,6 +2,7 @@ theGreenFox.controller('mainController',
 	['$scope', 'commandsService', '$location', '$anchorScroll', '$filter', '$window', '$state',
 	function($scope, commandsService, $location, $anchorScroll, $filter, $window, $state){
 
+	$scope.version = commandsService.version();
 	$scope.welcome = {
 		message: "Welcome! \n\nType '--help' to see available commands. \n\nIf you are not familiar with command line you can swith to"
 	}
@@ -20,8 +21,13 @@ theGreenFox.controller('mainController',
 			getDateTime();
 			var command = $scope.commandEntered.input
 
-			if (command === '--help' || command === 'fox' ) {
+			if (command === '--help' || command === 'fox') {
 				seekHelp();
+				$scope.gotoBottom();
+				return;
+			}else{
+				printCommand();
+				printError('"'+command+'" Command not found, type --help to see list of commands');
 				$scope.gotoBottom();
 				return;
 			}
@@ -44,7 +50,7 @@ theGreenFox.controller('mainController',
 					return;
 				}else{
 					printCommand();
-					printError('fox "'+secondCommand+'" Command not found, type --help to see list of commands.');
+					printError('fox "'+secondCommand+'" Command not found, type --help to see list of commands');
 					$scope.gotoBottom();
 					return;
 				}

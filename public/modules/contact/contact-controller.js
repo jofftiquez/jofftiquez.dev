@@ -2,6 +2,7 @@ theGreenFox.controller('contactController',
 	['$scope', 'commandsService', '$location', '$anchorScroll', '$filter', '$window', '$state', '$http', '$timeout',
 	function($scope, commandsService, $location, $anchorScroll, $filter, $window, $state, $http, $timeout){
 
+	$scope.version = commandsService.version();
 	$scope.welcome = {
 		message: "Type --exit to return"
 	}
