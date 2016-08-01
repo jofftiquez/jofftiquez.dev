@@ -17,7 +17,7 @@ theGreenFox.controller('contactController',
 	var lastCommand = "Enter your email :";
 	var state = 0;
 
-	console.log(endpoint);
+	// console.log(endpoint);
 	
 	$scope.handleCommand = function () {
 		var command = $scope.commandEntered.input;
