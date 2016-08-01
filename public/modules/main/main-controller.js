@@ -25,11 +25,6 @@ theGreenFox.controller('mainController',
 				seekHelp();
 				$scope.gotoBottom();
 				return;
-			}else{
-				printCommand();
-				printError('"'+command+'" Command not found, type --help to see list of commands');
-				$scope.gotoBottom();
-				return;
 			}
 
 			if (command.substring(0,command.indexOf(' ')) == 'fox') {
@@ -54,6 +49,11 @@ theGreenFox.controller('mainController',
 					$scope.gotoBottom();
 					return;
 				}
+			}else{
+				printCommand();
+				printError('"'+command+'" Command not found, type --help to see list of commands');
+				$scope.gotoBottom();
+				return;
 			}
 
 			if (command.substring(0,command.indexOf(' ')) == 'cd') {
