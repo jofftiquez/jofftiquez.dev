@@ -116,4 +116,5 @@ theGreenFox.controller('mainController',
     }
 
     getDateTime();
+
 }])

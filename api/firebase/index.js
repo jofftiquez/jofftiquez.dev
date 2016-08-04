@@ -2,9 +2,9 @@ module.exports = function() {
 
   	var express = require('express');
 	var router = express.Router();
-	var controller = require('./mailer.controller')();
+	var controller = require('./firebase.controller')();
 
-	router.post('/', controller.index);
+	router.get('/', controller.index);
 
     return router;
 };
