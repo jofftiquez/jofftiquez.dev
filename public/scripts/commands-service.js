@@ -2,13 +2,13 @@ theGreenFox.service('commandsService', ['$http', '$q',
   function($http, $q){
 
     function getCommands() {
-        return ['stackoverflow', 'github', 'linkedin', 'twitter', 'facebook', 'contact'];
+        return ['stackoverflow', 'github', 'linkedin', 'twitter', 'facebook', 'contact', 'cv'];
     }
 
     return {
         version: function () {
             var date = new Date();
-            return "Copyrigt (c) Jofferson Ramirez Tiquez "+date.getFullYear()+" v1.0.1";
+            return "Copyright (c) Jofferson Ramirez Tiquez "+date.getFullYear()+" v1.0.2";
         },
 
         endpoint: function () {
@@ -45,7 +45,8 @@ theGreenFox.service('commandsService', ['$http', '$q',
                 twitter: 'https://twitter.com/jrtiquez',
                 github: 'https://github.com/jofftiquez',
                 stackoverflow: 'http://stackoverflow.com/users/2889614/the-green-foxx',
-                linkedin: 'https://ph.linkedin.com/in/jofferson-tiquez-26265286'
+                linkedin: 'https://ph.linkedin.com/in/jofferson-tiquez-26265286',
+                cv: 'http://stackoverflow.com/cv/jofftiquez'
             }
             return links;
         },

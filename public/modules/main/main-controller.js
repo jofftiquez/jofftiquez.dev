@@ -39,6 +39,7 @@ theGreenFox.controller('mainController',
 						case 'linkedin': printCommand(); $window.open($scope.links.linkedin, '_blank'); break;
 						case 'twitter': printCommand(); $window.open($scope.links.twitter, '_blank'); break;
 						case 'facebook': printCommand(); $window.open($scope.links.facebook, '_blank'); break;
+						case 'cv': printCommand(); $window.open($scope.links.cv, '_blank'); break;
 						case 'contact': printCommand(); performContact(); break;
 					}
 					$scope.gotoBottom();
@@ -92,7 +93,7 @@ theGreenFox.controller('mainController',
     // Print functions
     function seekHelp() {
     	$('#directory-here').append(`
-		<b class="color-green">guest@jofftiquez.com</b>
+		<b class="color-green">guest@greenfox.me</b>
 		<b class="color-green">`+ $filter('date')($scope.dateTime, 'MMM d, y h:mm:ss') +`</b>
 		<b class="console-path"> / $</b><span class="entered-command">`+$scope.commandEntered.input+`</span><br>`+
 		`<span class="white-text">`+$scope.helpCommands+`</span><br>`);
@@ -101,7 +102,7 @@ theGreenFox.controller('mainController',
 
     function printCommand() {
     	$('#directory-here').append(`
-		<b class="color-green">guest@jofftiquez.com</b>
+		<b class="color-green">guest@greenfox.me</b>
 		<b class="color-green">`+ $filter('date')($scope.dateTime, 'MMM d, y h:mm:ss') +`</b>
 		<b class="console-path"> / $</b><span class="entered-command">`+$scope.commandEntered.input+`</span><br>`);
 		$scope.commandEntered = {};
@@ -109,7 +110,7 @@ theGreenFox.controller('mainController',
 
     function printError(arg) {
     	$('#directory-here').append(`
-		<b class="color-green">guest@jofftiquez.com</b>
+		<b class="color-green">guest@greenfox.me</b>
 		<b class="color-green">`+ $filter('date')($scope.dateTime, 'MMM d, y h:mm:ss') +`</b>
 		<b class="console-path"> / $</b><span class="error-text">`+arg+`</span><br>`);
 		$scope.commandEntered = {};

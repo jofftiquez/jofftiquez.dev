@@ -14,7 +14,7 @@ module.exports = function() {
 							"email": "jofftiquez@gmail.com"
 						}
 					],
-					"subject": req.body.subject
+					"subject": req.body.subject 
 				}
 				],
 				"from": {
@@ -23,7 +23,7 @@ module.exports = function() {
 				"content": [
 				{
 					"type": "text/plain",
-					"value": req.body.body + "\n Sent from jofftiquez.com"
+					"value": req.body.body + "\n Sent from www.greenfox.me"
 				}
 			]
 		};
