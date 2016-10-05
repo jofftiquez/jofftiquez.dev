@@ -16,11 +16,11 @@ module.exports = function() {
 					],
 					"subject": req.body.subject 
 				}
-				],
-				"from": {
-					"email": req.body.from
-				},
-				"content": [
+			],
+			"from": {
+				"email": req.body.from
+			},
+			"content": [
 				{
 					"type": "text/plain",
 					"value": req.body.body + "\n Sent from www.greenfox.me"

@@ -16,6 +16,7 @@
   "homepage": "https://bitbucket.org/mycureapi/mycure-admin-app-v1/#readme",
   "dependencies": {
     "azure-storage": "~0.10.0",
+    "cors": "^2.8.1",
     "express": "^4.13.4",
     "sendgrid": "^3.0.11"
   }
