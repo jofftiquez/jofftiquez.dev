@@ -51,6 +51,24 @@
         <meta property="og:image" content="http://www.greenfox.me/images/cover.png">
         <meta name="description" content="An experienced web developer from the Philippines. I've been participating in large projects (US and Europe based clients) since I started working in my field. I can fit in any environment and culture. I love video games and I also make them. Lastly I'm good at what I do and I love what I'm doing. P.S. I love cats <3 🐱🐱🐱">
         <meta property="og:description" content="An experienced web developer from the Philippines. I've been participating in large projects (US and Europe based clients) since I started working in my field. I can fit in any environment and culture. I love video games and I also make them. Lastly I'm good at what I do and I love what I'm doing. P.S. I love cats <3 🐱🐱🐱">
+        
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                appId      : '1155900524490502',
+                xfbml      : true,
+                version    : 'v2.7'
+                });
+            };
+
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
     </head>
     <body>
         <div ui-view></div>
