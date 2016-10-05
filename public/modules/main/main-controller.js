@@ -4,7 +4,7 @@ theGreenFox.controller('mainController',
 
 	$scope.version = commandsService.version();
 	$scope.welcome = {
-		message: "Welcome! \n\nType '--help' to see available commands. \n\nIf you are not familiar with command line you can swith to"
+		message: "Welcome! \n\nType '--help' to see available commands. \n\nIf you are not familiar with command line you can switch to"
 	}
 
 	$scope.helpCommands = commandsService.help();
