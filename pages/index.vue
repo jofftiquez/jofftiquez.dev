@@ -7,11 +7,12 @@
             br
             | Type '--help' to see available commands.
             br
-            | If you are not familiar with command line you can switch to #[a pretty mode].
+            | If you are not familiar with command line you can switch to #[nuxt-link(to="/pretty") pretty mode].
         v-col(cols="12" v-for="(result, index) in results" :key="index").py-0
           b.terminal-user guest@jofftiquez.dev {{date | format}}
             span.terminal-directory &nbsp;~/ $&nbsp;
             span(v-if="result.success").white--text {{result.success.message}}
+            span(v-if="result.help").white--text {{result.message}}
             span(v-if="result.error").red--text {{result.error.message}}
           template(v-if="result.help")
             p Syntax: &lt;command&gt; &lt;options&gt;
@@ -95,8 +96,9 @@ export default {
 
       if (this.command === '--help') {
         result.help = true;
-        this.command = '';
+        result.message = this.command;
         this.results.push(result);
+        this.command = '';
         this.$scrollTo(this.$refs.scrollRef);
         return;
       }
