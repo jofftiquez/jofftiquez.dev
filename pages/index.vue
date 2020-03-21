@@ -39,6 +39,7 @@
 <script>
 import { format } from 'date-fns';
 import { mixin as onClickOutside } from 'vue-on-click-outside';
+import headMeta from '@/utils/head-meta';
 export default {
   filters: {
     format (date) {
@@ -153,6 +154,13 @@ export default {
     focusInput () {
       this.$refs.commandInput.focus();
     },
+  },
+  head () {
+    return headMeta({
+      title: 'Jofferson Ramirez Tiquez | Web Developer | Open-source software advocate',
+      description: `I am a web developer by profession, and by passion. I have more than ${new Date().getFullYear() - 2013} years of experience in using JavaScript.`,
+      socialBanner: require('~/assets/images/me.jpg'),
+    });
   },
 };
 </script>

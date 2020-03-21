@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import headMeta from '@/utils/head-meta';
 export default {
   data () {
     return {
@@ -78,6 +79,13 @@ export default {
       const start = 2013;
       return new Date().getFullYear() - start;
     },
+  },
+  head () {
+    return headMeta({
+      title: 'Jofferson Ramirez Tiquez | Web Developer | Open-source software advocate',
+      description: `I am a web developer by profession, and by passion. I have more than ${new Date().getFullYear() - 2013} years of experience in using JavaScript.`,
+      socialBanner: require('~/assets/images/me.jpg'),
+    });
   },
 };
 </script>
