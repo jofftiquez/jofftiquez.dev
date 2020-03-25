@@ -7,7 +7,7 @@
             br
             | Type '--help' to see available commands.
             br
-            | If you are not familiar with command line you can switch to #[nuxt-link(to="/pretty") pretty mode].
+            | If you are not familiar with command line you can switch to #[nuxt-link(to="/pretty").white--text pretty mode].
         v-col(cols="12" v-for="(result, index) in results" :key="index").py-0
           b.terminal-user guest@jofftiquez.dev {{date | format}}
             span.terminal-directory &nbsp;~/ $&nbsp;
@@ -23,7 +23,7 @@
               span.ml-5 Usage: #[b go] &lt;option&gt;
               br
               span.ml-5 Options: {{validOptions.map(opt => opt.id).join(', ')}}
-            p The #[b contact] command - Contanct me.
+            p The #[b contact] command - Contact me.
               br
               span.ml-5 Usage: #[b contact]
             p The #[b clear] command - Clear the terminal.
@@ -60,6 +60,10 @@ export default {
         {
           id: 'stackoverflow',
           link: 'https://stackoverflow.com/users/2889614/cent1pede',
+        },
+        {
+          id: 'blog',
+          link: 'https://randomcodetips.com',
         },
         {
           id: 'linkedin',
