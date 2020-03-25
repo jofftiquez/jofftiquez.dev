@@ -12,7 +12,7 @@
           li(v-for="(project, key) in projects" :key="key")
             a(:href="project.link" :alt="project.description" target="_blank" rel="noreferrer") {{project.name}}
           li and #[a(:href="social[0].link" target="_blank" rel="noreferrer") more]
-        p Here's #[a my blog] about random coding tips.
+        p Here's #[a(href="https://randomcodetips.com" target="_blank" rel="noreferrer") my blog] about random coding tips.
         p My hobbies includes Rock Climbing, Surfing, and Trail Running.
         p To know more about me visit the following:&nbsp;
           template(v-for="(soc, key) in social")
