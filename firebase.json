@@ -1,10 +1,33 @@
 {
   "hosting": {
-    "public": "dist",
+    "site": "jofftiquez-sample",
+    "public": "./site",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      }
+    ],
+    "cleanUrls": true
+  },
+  "emulators": {
+    "hosting": {
+      "port": 9000
+    },
+    "ui": {
+      "enabled": true,
+      "port": 9090
+    },
+    "singleProjectMode": true
   }
 }
