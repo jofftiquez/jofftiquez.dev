@@ -1,82 +1,93 @@
-const colors = require('vuetify/es5/util/colors').default;
+// const LANG = 'en_US';
+// const TYPE = 'website';
+// const URL = 'https://hippocrades.com';
+// const SITE_NAME = 'hippocrades.com';
 
-module.exports = {
-  mode: 'universal',
-  /*
-  ** Headers of the page
-  */
-  head: {
-    // titleTemplate: '%s - ' + process.env.npm_package_name,
-    // title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    ],
-    link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap' },
-    ],
+// https://nuxt.com/docs/api/configuration/nuxt-config
+// eslint-disable-next-line no-undef
+export default defineNuxtConfig({
+  preset: 'node-server',
+
+  imports: {
+    autoImport: false,
   },
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
-  /*
-  ** Global CSS
-  */
-  css: [
-  ],
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
-  /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify',
-  ],
-  /*
-  ** Nuxt.js modules
-  */
+
   modules: [
-    'vue-scrollto/nuxt',
+    '@nuxtjs/tailwindcss',
+    'nuxt-headlessui',
+    'nuxt-gtag',
   ],
-  /*
-  ** vuetify module configuration
-  ** https://github.com/nuxt-community/vuetify-module
-  */
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
+
+  gtag: {
+    id: 'G-SDCBMR60FY',
+  },
+
+  nitro: {
+    preset: 'firebase',
+  },
+
+  srcDir: './src',
+
+  runtimeConfig: {
+    public: {
+      yourEnv: process.env.YOUR_ENV,
+    },
+  },
+
+  plugins: [
+    {
+      src: '@/plugins/aos',
+      ssr: false,
+      mode: 'client',
+    },
+  ],
+
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css',
         },
-      },
+      ],
     },
   },
-  /*
-  ** Build configuration
-  */
+
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config',
+    exposeConfig: false,
+    exposeLevel: 2,
+    config: {},
+    injectPosition: 'first',
+    viewer: true,
+  },
+
+  headlessui: {
+    prefix: 'Headless',
+  },
+
   build: {
-    /*
-    ** You can extend webpack config here
-    */
     extend (config, ctx) {
+      config.resolve.symlinks = false;
     },
   },
-};
+
+  image: {
+    dir: 'assets/images',
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536,
+      '3xl': 1920,
+    },
+  },
+
+  devtools: {
+    enabled: true,
+  },
+});
