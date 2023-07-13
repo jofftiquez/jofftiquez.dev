@@ -1,15 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
-  content: [
-    'site/**/*.{html,js}',
-  ],
   theme: {
     extend: {
+      colors: {
+        primary: '#8ae234',
+        secondary: '#729fcf',
+      },
       fontFamily: {
-        primary: ['JetBrainsMono']
-      }
+        primary: ['Inter'],
+      },
     },
   },
-  plugins: [],
-}
+  daisyui: {},
+  plugins: [
+    '@tailwindcss/forms',
+    '@tailwindcss/container-queries',
+    '@tailwindcss/typography',
+    require('daisyui'),
+  ],
+};
