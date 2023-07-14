@@ -48,6 +48,8 @@ import {
   SOCIAL_LINKS_NAMES,
   SOCIAL_LINKS,
 } from '~/constants';
+import ogBanner from '../assets/images/og-banner.jpg';
+
 export default {
   setup () {
     definePageMeta({
@@ -65,7 +67,7 @@ export default {
           hid: 'og:image',
           name: 'og:image',
           property: 'og:image',
-          // content: ogBanner,
+          content: ogBanner,
         },
       ],
     });
