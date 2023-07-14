@@ -22,9 +22,9 @@ export default defineNuxtConfig({
     id: 'G-SDCBMR60FY',
   },
 
-  nitro: {
-    preset: 'firebase',
-  },
+  // nitro: {
+  //   preset: 'firebase',
+  // },
 
   srcDir: './src',
 

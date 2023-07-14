@@ -1,7 +1,7 @@
 <template>
-  <div id="terminal" class="p-4 text-white h-full overflow-scroll" @click="clickOnWrapper">
+  <div id="terminal" class="p-4 text-white bg-base-200 h-full overflow-scroll" @click="clickOnWrapper">
     <div id="greentings" class="mb-3">
-      <p>Hi, I'm Joff. Welcome!</p>
+      <p>Hi, I'm Joff &lt;3 Welcome!</p>
       <p>Type '--help' to see available commands.</p>
       <p>If you are not familiar with command line you can switch to <nuxt-link to="/gui" class="underline">gui mode</nuxt-link>.</p>
     </div>
@@ -128,7 +128,7 @@ export default {
           <div>
             <div class="mb-4">
               <p>Syntax: <code>&lt;command&gt;</code> <code>&lt;options&gt;</code></p>
-              <p>Commands: <b>go</b>, <b>contact</b>, <b>clear</b></p>
+              <p>Commands: <b>go</b>, <b>contact</b>, <b>clear</b>, <b>gui</b></p>
             </div>
 
             <div class="mb-4">
@@ -146,6 +146,11 @@ export default {
               <p>The <b>clear</b> command - Clear the terminal.</p>
               <p class="indent-3">Usage: <b>clear</b></p>
             </div>
+
+            <div class="mb-4">
+              <p>The <b>gui</b> command - Switch to GUI mode.</p>
+              <p class="indent-3">Usage: <b>gui</b></p>
+            </div>
           </div>
         `;
       }
@@ -155,7 +160,7 @@ export default {
         if (commandInput === goCommand) {
           const [, command] = commandInput.split(' '); // go github -> [go, github]
           const link = SOCIAL_LINKS.find((link) => link.name === command);
-          commandObject.html = `<p>Opening ${link.url}</p>`;
+          commandObject.html = `<p>Opening <a href="${link.url}" target="_blank" class="underline">${link.url}</a>...</p>`;
           window.open(link.url, '_blank');
           console.warn('link found, should break', link.url);
           break;
@@ -163,7 +168,7 @@ export default {
       }
 
       if (commandInput === COMMAND_CONTACT) {
-        commandObject.html = `<p>Send me an email at <a href="mailto:${PROXY_EMAIL}">${PROXY_EMAIL}</a>`;
+        commandObject.html = `<p>Send me an email at <a href="mailto:${PROXY_EMAIL}" class="underline">${PROXY_EMAIL}</a>`;
       }
 
       if (commandInput === COMMAND_CLEAR) {
@@ -205,6 +210,8 @@ export default {
 <style scoped>
 #prompt-input {
   background: transparent;
+  margin-bottom: 2px;
+  width: 300px;
   border: none;
   outline: none;
   color: #fff;

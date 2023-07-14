@@ -12,4 +12,5 @@
 body {
   font-family: 'JetBrains Mono', monospace;
   color: #e5e3de !important;
+  @apply: bg-base-100;
 }
