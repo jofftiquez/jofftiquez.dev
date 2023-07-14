@@ -1,9 +1,8 @@
 {
-  "name": "nuxtwind-daisy",
-  "version": "1.0.0",
-  "main": ".eslintrc.js",
-  "description": "Nuxtwind Daisy is a starter template for Nuxt.js 3 + Tailwind CSS + Daisy UI with additional installed setup for custom font, icons, animation, and more.",
-  "productName": "Nuxtwind Daisy 🟢💨🌼",
+  "name": "jofftiquez.dev",
+  "version": "2.0.0",
+  "description": "My personal website made with Nuxt.js 3 and DaisyUI",
+  "productName": "Personal Website",
   "author": "Joff Tiquez <jofftiquez@gmail.com>",
   "scripts": {
     "lint": "eslint --ext .js,.vue ./ --fix",
@@ -44,11 +43,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ossphilippines/nuxtwind-daisy.git"
+    "url": "git+https://github.com/jofftiquez/jofftiquez.dev.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ossphilippines/nuxtwind-daisy/issues"
+    "url": "https://github.com/jofftiquez/jofftiquez.dev/issues"
   },
-  "homepage": "https://github.com/ossphilippines/nuxtwind-daisy#readme"
+  "homepage": "https://github.com/jofftiquez/jofftiquez.dev#readme"
 }
