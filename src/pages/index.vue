@@ -1,19 +1,19 @@
 <template>
   <div id="terminal" class="p-4 text-white bg-base-200 h-full overflow-scroll" @click="clickOnWrapper">
     <div id="greentings" class="mb-3">
-      <p>Hi, I'm Joff &lt;3 Welcome!</p>
+      <p>Hi, I'm Joff <span class="text-purple-500">&lt;3</span> Welcome!</p>
       <p>Type 'help' to see available commands.</p>
       <p>If you are not familiar with command line you can switch to <nuxt-link to="/gui" class="underline">gui mode</nuxt-link>.</p>
     </div>
     <div id="output">
       <template v-for="(output, index) in outputList" :key="index">
-        <span class="text-primary">guest@jofftiquez.dev <span>{{output.date}}</span><span class="text-secondary"> ~/ $</span><span class="text-white">&nbsp;{{output.commandInput}}</span></span>
+        <span class="text-primary">guest@jofftiquez.dev <span>{{output.date}}</span><span class="text-secondary"> ~/ <span class="text-white">$</span></span><span class="text-white">&nbsp;{{output.commandInput}}</span></span>
         <div v-html="output.html"/>
       </template>
     </div>
     <div id="command">
       <form @submit.prevent="submit">
-        <span class="text-primary">guest@jofftiquez.dev <span>{{currentDate}}</span><span class="text-secondary"> ~/ $</span></span>
+        <span class="text-primary">guest@jofftiquez.dev <span>{{currentDate}}</span><span class="text-secondary"> ~/ <span class="text-white">$</span></span></span>
         <input
           v-model="inputModel"
           autocomplete="off"
@@ -117,14 +117,27 @@ export default {
         date: currentDate.value,
       };
 
-      if (!availableCommands.includes(commandInput)) {
-        commandObject.html = `<p class="text-red-500">Command ${commandInput} not found. Type '--help' to see available commands.</p>`;
+      // if command is empty
+      // display empty prompt
+      if (commandInput === '') {
+        commandObject.html = '';
         outputList.value.push(commandObject);
         currentDate.value = getCurrentDate();
         inputModel.value = '';
         return;
       }
 
+      // if command is not empty annd not available
+      // display error
+      if (!availableCommands.includes(commandInput)) {
+        commandObject.html = `<p class="text-red-500">Command '${commandInput}' not found. Type 'help' to see available commands.</p>`;
+        outputList.value.push(commandObject);
+        currentDate.value = getCurrentDate();
+        inputModel.value = '';
+        return;
+      }
+
+      // if command is help
       if (commandInput === COMMAND_HELP) {
         commandObject.html = `
           <div>
@@ -157,6 +170,8 @@ export default {
         `;
       }
 
+      // if command is go iterate through goCommands
+      // if command is found, open link then break
       for (const goCommand of goCommands) {
         console.warn('test', goCommand);
         if (commandInput === goCommand) {
@@ -169,16 +184,19 @@ export default {
         }
       }
 
+      // if command is contact display email
       if (commandInput === COMMAND_CONTACT) {
         commandObject.html = `<p>Send me an email at <a href="mailto:${PROXY_EMAIL}" class="underline">${PROXY_EMAIL}</a>`;
       }
 
+      // if command is clear clear the terminal
       if (commandInput === COMMAND_CLEAR) {
         inputModel.value = '';
         outputList.value = [];
         return;
       }
 
+      // if command is pretty mode switch to gui
       if (commandInput === COMMAND_PRETTY_MODE) {
         router.push('/gui');
         return;
@@ -212,12 +230,11 @@ export default {
 <style scoped>
 #prompt-input {
   background: transparent;
-  margin-bottom: 2px;
+  padding-bottom: 3px;
   width: 300px;
   border: none;
   outline: none;
   color: #fff;
-  font-size: 1rem;
   padding-left: 10px;
 }
 </style>
