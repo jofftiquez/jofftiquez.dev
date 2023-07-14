@@ -2,7 +2,7 @@
   <div id="terminal" class="p-4 text-white bg-base-200 h-full overflow-scroll" @click="clickOnWrapper">
     <div id="greentings" class="mb-3">
       <p>Hi, I'm Joff &lt;3 Welcome!</p>
-      <p>Type '--help' to see available commands.</p>
+      <p>Type 'help' to see available commands.</p>
       <p>If you are not familiar with command line you can switch to <nuxt-link to="/gui" class="underline">gui mode</nuxt-link>.</p>
     </div>
     <div id="output">
