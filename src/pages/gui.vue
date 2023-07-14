@@ -33,7 +33,7 @@ import { useHead } from '#app';
 import { definePageMeta } from '#imports';
 // import GenericPanel from '~/components/commons/GenericPanel';
 import { SOCIAL_LINKS } from '~/constants';
-import ogBanner from '../assets/images/og-banner.jpg';
+import ogBanner from '../assets/images/og-banner.png';
 
 export default {
   // components: {

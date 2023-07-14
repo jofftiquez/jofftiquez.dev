@@ -48,7 +48,7 @@ import {
   SOCIAL_LINKS_NAMES,
   SOCIAL_LINKS,
 } from '~/constants';
-import ogBanner from '../assets/images/og-banner.jpg';
+import ogBanner from '../assets/images/og-banner.png';
 
 export default {
   setup () {
