@@ -4,7 +4,7 @@ This is my personal website. It is built with Nuxt.js and hosted on Firebase.
 
 ## Terminal mode
 
-![image](https://github.com/jofftiquez/jofftiquez.dev/assets/8638243/e74fcc2d-c832-4a95-a116-e001f679e433)
+![image](https://github.com/jofftiquez/jofftiquez.dev/assets/8638243/852ccba4-1db9-48a3-bdf2-ca3c5dd32e2c)
 
 ## GUI mode dark
 
