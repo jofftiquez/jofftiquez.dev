@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#414448] h-[100vh]">
+  <div data-theme="dark" class="bg-base-200 h-[100vh]">
     <slot />
   </div>
 </template>
