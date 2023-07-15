@@ -1,6 +1,6 @@
 <template>
 
-  <div class="hero min-h-screen bg-base-200">
+  <main class="hero min-h-screen bg-base-200">
     <div class="hero-content text-center">
       <div class="max-w-2xl">
         <h1 data-aos="fade-down" class="text-4xl md:text-7xl font-bold mb-6">Hi 👋</h1>
@@ -24,29 +24,28 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
 </template>
 
 <script>
-import { useHead } from '#app';
 import { definePageMeta } from '#imports';
-// import GenericPanel from '~/components/commons/GenericPanel';
 import { SOCIAL_LINKS } from '~/constants';
+import { useHead } from '#app';
 import ogBanner from '../assets/images/og-banner.png';
 
 export default {
-  // components: {
-  //   GenericPanel,
-  // },
   setup () {
     definePageMeta({
       layout: 'default',
     });
 
+    const metaTitle = 'Home - Joff Tiquez';
+    const metaDescription = 'Web Developer from 🇵🇭';
+
     useHead({
-      title: 'Joff Tiquez',
-      description: 'Web Developer from Philippines',
+      title: metaTitle,
+      description: metaDescription,
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       ],
@@ -56,6 +55,8 @@ export default {
           name: 'og:image',
           property: 'og:image',
           content: ogBanner,
+          title: metaTitle,
+          description: metaDescription,
         },
       ],
     });
