@@ -1,6 +1,6 @@
 <template>
   <div :data-theme="theme">
-    <div class="navbar fixed bg-base-100 z-40 shadow-sm">
+    <div :class="`navbar ${isGui ? 'fixed' : ''} bg-base-100 z-40 shadow-sm`">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -10,9 +10,15 @@
             <li>
               <nuxt-link class="btn btn-ghost" to="/">Terminal<b>_</b></nuxt-link>
             </li>
-            <!-- <li>
+            <li>
+              <nuxt-link class="btn btn-ghost" to="/gui">GUI</nuxt-link>
+            </li>
+            <li>
               <nuxt-link class="btn btn-ghost" to="/uses">Uses</nuxt-link>
-            </li> -->
+            </li>
+            <li>
+              <nuxt-link class="btn btn-ghost" to="/open-source">Open Source</nuxt-link>
+            </li>
           </ul>
         </div>
         <nuxt-link class="btn btn-ghost normal-case md:text-xl" to="/">
@@ -20,17 +26,13 @@
           jofftiquez.dev
         </nuxt-link>
       </div>
-      <div class="navbar-center hidden lg:flex">
-        <nuxt-link class="btn btn-ghost" to="/">Terminal<b>_</b></nuxt-link>
-        <!-- <nuxt-link class="btn btn-ghost" to="/uses">Uses</nuxt-link> -->
-      </div>
       <div class="navbar-end gap-4">
-        <!-- <select v-model="theme" class="select select-primary select-sm">
-          <option disabled selected>Select Theme</option>
-          <option v-for="theme in themes" :value="theme" :key="theme">
-            <span class="text-uppercase">{{ theme }}</span>
-          </option>
-        </select> -->
+        <div class="hidden lg:flex">
+          <nuxt-link class="btn btn-ghost" to="/">Terminal<b>_</b></nuxt-link>
+          <nuxt-link class="btn btn-ghost" to="/gui">GUI</nuxt-link>
+          <nuxt-link class="btn btn-ghost" to="/uses">Uses</nuxt-link>
+          <nuxt-link class="btn btn-ghost" to="/open-source">Open Source</nuxt-link>
+        </div>
         <button
           class="btn btn-circle"
           @click="toggleTheme = !toggleTheme"
@@ -45,7 +47,8 @@
 </template>
 
 <script>
-import { ref, watch, onMounted } from 'vue';
+import { ref, watch, onMounted, computed } from 'vue';
+import { useRoute } from '../../.nuxt/vue-router';
 const THEMES = [
   'light',
   'dark',
@@ -96,10 +99,16 @@ export default {
         theme.value = 'light';
       }
     });
+
+    const route = useRoute();
+    console.warn('route', route.name);
+    const isGui = computed(() => route.name === 'gui');
+
     return {
       toggleTheme,
       theme,
       themes: THEMES,
+      isGui,
     };
   },
 };
