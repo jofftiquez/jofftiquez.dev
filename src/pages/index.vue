@@ -1,5 +1,5 @@
 <template>
-  <div id="terminal" class="p-4 text-white bg-base-200 h-full overflow-scroll" @click="clickOnWrapper">
+  <main id="terminal" class="p-4 text-white bg-base-200 h-full overflow-scroll" @click="clickOnWrapper">
     <div id="greentings" class="mb-3">
       <p>Hi, I'm Joff <span class="text-purple-500">&lt;3</span> Welcome!</p>
       <p>Type 'help' to see available commands.</p>
@@ -24,15 +24,16 @@
         <button type="submit" class="absolute left-[-1000px]"/>
       </form>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
-import { useHead } from '#app';
-import { onMounted, ref } from 'vue';
 import { definePageMeta } from '#imports';
 import { format } from 'date-fns';
+import { onMounted, ref } from 'vue';
+import { useHead } from '#app';
 import { useRouter } from 'vue-router';
+import ogBanner from '../assets/images/og-banner.png';
 import {
   PROXY_EMAIL,
   COMMAND_HELP,
@@ -48,7 +49,6 @@ import {
   SOCIAL_LINKS_NAMES,
   SOCIAL_LINKS,
 } from '~/constants';
-import ogBanner from '../assets/images/og-banner.png';
 
 export default {
   setup () {
@@ -56,9 +56,12 @@ export default {
       layout: 'blank',
     });
 
+    const metaTitle = 'Home - Joff Tiquez';
+    const metaDescription = 'Web Developer from 🇵🇭';
+
     useHead({
-      title: 'Joff Tiquez',
-      description: 'Web Developer from Philippines',
+      title: metaTitle,
+      description: metaDescription,
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       ],
@@ -68,6 +71,8 @@ export default {
           name: 'og:image',
           property: 'og:image',
           content: ogBanner,
+          title: metaTitle,
+          description: metaDescription,
         },
       ],
     });
