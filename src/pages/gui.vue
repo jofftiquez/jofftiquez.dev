@@ -29,9 +29,8 @@
 </template>
 
 <script>
-import { definePageMeta } from '#imports';
+import { definePageMeta, useSeoMeta } from '#imports';
 import { SOCIAL_LINKS } from '~/constants';
-import { useHead } from '#app';
 import ogBanner from '../assets/images/og-banner.png';
 
 export default {
@@ -43,22 +42,16 @@ export default {
     const metaTitle = 'Home - Joff Tiquez';
     const metaDescription = 'Web Developer from 🇵🇭';
 
-    useHead({
+    useSeoMeta({
       title: metaTitle,
+      ogTitle: metaTitle,
       description: metaDescription,
-      link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-      ],
-      meta: [
-        {
-          hid: 'og:image',
-          name: 'og:image',
-          property: 'og:image',
-          content: ogBanner,
-          title: metaTitle,
-          description: metaDescription,
-        },
-      ],
+      ogDescription: metaDescription,
+      image: ogBanner,
+      ogImage: ogBanner,
+      url: 'https://jofftiquez.com/gui',
+      ogUrl: 'https://jofftiquez.com/gui',
+      twitterCard: 'summary_large_image',
     });
 
     return {

@@ -28,10 +28,9 @@
 </template>
 
 <script>
-import { definePageMeta } from '#imports';
+import { definePageMeta, useSeoMeta } from '#imports';
 import { format } from 'date-fns';
 import { onMounted, ref } from 'vue';
-import { useHead } from '#app';
 import { useRouter } from 'vue-router';
 import ogBanner from '../assets/images/og-banner.png';
 import {
@@ -59,22 +58,16 @@ export default {
     const metaTitle = 'Home - Joff Tiquez';
     const metaDescription = 'Web Developer from 🇵🇭';
 
-    useHead({
+    useSeoMeta({
       title: metaTitle,
+      ogTitle: metaTitle,
       description: metaDescription,
-      link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-      ],
-      meta: [
-        {
-          hid: 'og:image',
-          name: 'og:image',
-          property: 'og:image',
-          content: ogBanner,
-          title: metaTitle,
-          description: metaDescription,
-        },
-      ],
+      ogDescription: metaDescription,
+      image: ogBanner,
+      ogImage: ogBanner,
+      url: 'https://jofftiquez.com',
+      ogUrl: 'https://jofftiquez.com',
+      twitterCard: 'summary_large_image',
     });
 
     const router = useRouter();

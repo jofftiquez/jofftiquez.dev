@@ -90,6 +90,8 @@ export default {
       ogDescription: metaDescription,
       image: ogBanner,
       ogImage: ogBanner,
+      url: 'https://jofftiquez.com/uses',
+      ogUrl: 'https://jofftiquez.com/uses',
       twitterCard: 'summary_large_image',
     });
 

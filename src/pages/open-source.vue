@@ -61,8 +61,7 @@
 </template>
 
 <script>
-import { definePageMeta } from '#imports';
-import { useHead } from '#app';
+import { definePageMeta, useSeoMeta } from '#imports';
 import ogBanner from '../assets/images/og-banner.png';
 
 export default {
@@ -74,22 +73,16 @@ export default {
     const metaTitle = 'Open Source - Joff Tiquez';
     const metaDescription = 'A collection of my open source projects';
 
-    useHead({
+    useSeoMeta({
       title: metaTitle,
+      ogTitle: metaTitle,
       description: metaDescription,
-      link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-      ],
-      meta: [
-        {
-          hid: 'og:image',
-          name: 'og:image',
-          property: 'og:image',
-          content: ogBanner,
-          title: metaTitle,
-          description: metaDescription,
-        },
-      ],
+      ogDescription: metaDescription,
+      image: ogBanner,
+      ogImage: ogBanner,
+      url: 'https://jofftiquez.com/open-source',
+      ogUrl: 'https://jofftiquez.com/open-source',
+      twitterCard: 'summary_large_image',
     });
 
     return {};
