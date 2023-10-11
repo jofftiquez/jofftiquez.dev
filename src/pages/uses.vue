@@ -60,10 +60,10 @@
       <h2 class="text-xl mb-2">Hardware</h2>
       <ul>
         <li>
-          MacBook Pro 14" (2021) 16GB RAM, 1TB SSD
+          MacBook Pro 14" (2023) 16GB RAM, 1TB SSD, 12 CPU, 19 GPU
         </li>
         <li>
-          Monitors: Samsung, HKC
+          Monitors: Samsung, HKC, Prism+
         </li>
       </ul>
     </section>
