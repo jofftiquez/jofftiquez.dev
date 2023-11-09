@@ -48,7 +48,7 @@
 
 <script>
 import { ref, watch, onMounted, computed } from 'vue';
-import { useRoute } from '../../.nuxt/vue-router';
+import { useRoute } from 'vue-router';
 const THEMES = [
   'light',
   'dark',
