@@ -1,5 +1,5 @@
 <template>
-  <main id="terminal" class="p-4 text-white bg-base-200 h-full overflow-scroll" @click="clickOnWrapper">
+  <main id="terminal" class="p-4 text-white bg-base-200 h-full overflow-auto" @click="clickOnWrapper">
     <div id="greentings" class="mb-3">
       <p>Hi, I'm Joff <span class="text-purple-500">&lt;3</span> Welcome!</p>
       <p>Type 'help' to see available commands.</p>
@@ -101,6 +101,13 @@ export default {
 
     onMounted(() => {
       inputRef.value.focus();
+      globalThis.addEventListener('keydown', (event) => {
+        if (event.ctrlKey && event.key === 'l') {
+          inputModel.value = '';
+          outputList.value = [];
+          inputRef.value.focus();
+        }
+      });
     });
 
     function submit () {
@@ -163,6 +170,10 @@ export default {
             <div class="mb-4">
               <p>The <b>gui</b> command - Switch to GUI mode.</p>
               <p class="indent-3">Usage: <b>gui</b></p>
+            </div>
+            
+            <div class="mb-4">
+              <p>Keyboard: <code>CTRL + L</code> - Clear the terminal.</p>
             </div>
           </div>
         `;
