@@ -1,9 +1,9 @@
 <template>
 
   <main class="hero min-h-screen bg-base-100">
-    <div class="grid grid-cols-2 h-screen">
+    <div class="grid grid-cols-1 md:grid-cols-2 h-screen p-4 md:p-0">
 
-      <div class="flex relative justify-center">
+      <div class="hidden md:flex relative justify-center">
         <img class="w-[500px] bottom-0 absolute" src="../assets/images/jofftiquez-compressed.png" alt="">
       </div>
 
@@ -12,7 +12,7 @@
           <h1 data-aos="fade-down" class="text-4xl md:text-7xl font-bold mb-6">Hi 👋</h1>
           <h1 data-aos="fade-down" class="text-4xl md:text-4xl font-bold mb-6">I'm Joff Tiquez</h1>
           <p class="mb-10">
-            I am a web developer from Manila 🇵🇭 For the past decade I am mostly focusing on web development using JavaScript.
+            I am a web developer from Manila 🇵🇭 For the past decade I am mostly focusing on web development using JavaScript. See my works <nuxt-link to="/open-source" class="underline underline-offset-2 hover:text-primary">here</nuxt-link>.
           </p>
           <div class="flex flex-wrap gap-8">
             <template v-for="(link, index) in socialLinks" :key="index">
