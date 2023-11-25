@@ -1,6 +1,7 @@
 export const PROXY_EMAIL = '9jad6zep@duck.com';
 
 export const COMMAND_HELP = 'help';
+export const COMMAND_LS = 'ls';
 export const COMMAND_GO_GITHUB = 'go github';
 export const COMMAND_GO_STACKOVERFLOW = 'go stackoverflow';
 export const COMMAND_GO_BLOG = 'go blog';
