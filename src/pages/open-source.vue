@@ -68,6 +68,8 @@ export default {
   setup () {
     definePageMeta({
       layout: 'default',
+      pageName: 'Open Source',
+      order: 2,
     });
 
     const metaTitle = 'Open Source - Joff Tiquez';
