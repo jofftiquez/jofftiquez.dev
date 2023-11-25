@@ -36,6 +36,7 @@ import ogBanner from '../assets/images/og-banner.png';
 import {
   PROXY_EMAIL,
   COMMAND_HELP,
+  COMMAND_LS,
   COMMAND_GO_GITHUB,
   COMMAND_GO_STACKOVERFLOW,
   COMMAND_GO_BLOG,
@@ -53,6 +54,8 @@ export default {
   setup () {
     definePageMeta({
       layout: 'blank',
+      pageName: 'Home',
+      order: 0,
     });
 
     const metaTitle = 'Home - Joff Tiquez';
@@ -79,6 +82,7 @@ export default {
 
     const availableCommands = [
       COMMAND_HELP,
+      COMMAND_LS,
       COMMAND_GO_GITHUB,
       COMMAND_GO_STACKOVERFLOW,
       COMMAND_GO_BLOG,
@@ -116,7 +120,8 @@ export default {
         const output = document.getElementById('terminal');
         output.scrollTop = output.scrollHeight;
       }, 0);
-      const commandInput = inputModel.value;
+
+      const commandInput = inputModel.value?.trim();
       const commandObject = {
         commandInput,
         date: currentDate.value,
@@ -132,8 +137,8 @@ export default {
         return;
       }
 
-      // if command is not empty annd not available
-      // display error
+      // if command is not empty and not
+      // available display error
       if (!availableCommands.includes(commandInput)) {
         commandObject.html = `<p class="text-red-500">Command '${commandInput}' not found. Type 'help' to see available commands.</p>`;
         outputList.value.push(commandObject);
@@ -163,6 +168,11 @@ export default {
             </div>
 
             <div class="mb-4">
+              <p>The <b>ls</b> command - List all of the available routes.</p>
+              <p class="indent-3">Usage: <b>ls</b></p>
+            </div>
+
+            <div class="mb-4">
               <p>The <b>clear</b> command - Clear the terminal.</p>
               <p class="indent-3">Usage: <b>clear</b></p>
             </div>
@@ -182,7 +192,6 @@ export default {
       // if command is go iterate through goCommands
       // if command is found, open link then break
       for (const goCommand of goCommands) {
-        console.warn('test', goCommand);
         if (commandInput === goCommand) {
           const [, command] = commandInput.split(' '); // go github -> [go, github]
           const link = SOCIAL_LINKS.find((link) => link.name === command);
@@ -196,6 +205,26 @@ export default {
       // if command is contact display email
       if (commandInput === COMMAND_CONTACT) {
         commandObject.html = `<p>Send me an email at <a href="mailto:${PROXY_EMAIL}" class="underline">${PROXY_EMAIL}</a>`;
+      }
+
+      // if command is ls display
+      // available routes
+      if (commandInput === COMMAND_LS) {
+        const routes = router.getRoutes();
+
+        const mappedRoutes = routes
+          .sort((a, b) => a.meta.order - b.meta.order)
+          .map((route, index) => {
+            return `<li>drwxr-xr-x ${index} centipede centipede <a href="${route.path}" class="underline hover:text-primary">${route.meta.pageName}</a></li>`;
+          });
+
+        commandObject.html = `
+          <div>
+            <ul class="list-inside">
+              ${mappedRoutes.join('')}
+            </ul>
+          </div>
+        `;
       }
 
       // if command is clear clear the terminal

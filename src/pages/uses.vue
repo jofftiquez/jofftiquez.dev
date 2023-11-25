@@ -78,6 +78,8 @@ export default {
   setup () {
     definePageMeta({
       layout: 'default',
+      pageName: 'Uses',
+      order: 3,
     });
 
     const metaTitle = 'Uses - Joff Tiquez';

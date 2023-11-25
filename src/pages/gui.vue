@@ -44,6 +44,8 @@ export default {
   setup () {
     definePageMeta({
       layout: 'default',
+      pageName: 'GUI',
+      order: 1,
     });
 
     const metaTitle = 'Home - Joff Tiquez';
