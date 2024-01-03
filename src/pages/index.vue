@@ -215,7 +215,7 @@ export default {
         const mappedRoutes = routes
           .sort((a, b) => a.meta.order - b.meta.order)
           .map((route, index) => {
-            return `<li>drwxr-xr-x ${index} centipede centipede <a href="${route.path}" class="underline hover:text-primary">${route.meta.pageName}</a></li>`;
+            return `<li>drwxr-xr-x ${index} centipede centipede <a href="${route.path}" class="underline hover:text-primary">${route.meta.pageName === 'GUI' ? 'GUI (Graphical User Interface)' : route.meta.pageName}</a></li>`;
           });
 
         commandObject.html = `
