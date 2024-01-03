@@ -27,7 +27,7 @@ export default {
     });
 
     const metaTitle = 'Thank You - Joff Tiquez';
-    const metaDescription = 'Acknowledgement of the open source packages used in this repo';
+    const metaDescription = 'Acknowledgement of the open source packages used in this project';
 
     useSeoMeta({
       title: metaTitle,
