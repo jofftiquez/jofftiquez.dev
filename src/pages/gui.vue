@@ -44,7 +44,7 @@ export default {
   setup () {
     definePageMeta({
       layout: 'default',
-      pageName: 'GUI',
+      pageName: 'GUI (Graphical User Interface)',
       order: 1,
     });
 
