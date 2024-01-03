@@ -2,12 +2,12 @@
   <main class="mx-auto md:max-w-3xl px-5 py-5 md:py-7 min-h-screen">
     <h1 class="text-4xl mb-10">Thank You</h1>
 
-    <!-- Repeat this section for each dependency and devDependency in the package.json file -->
-    <section class="mb-8">
-      <h2 class="text-xl mb-2">Package Name</h2>
+    <!-- Fetch dependencies and devDependencies from package.json and repeat this section for each one -->
+    <section v-for="(repository, name) in dependencies" :key="name" class="mb-8">
+      <h2 class="text-xl mb-2">{{ name }}</h2>
       <ul>
         <li>
-          <a href="https://github.com/package/repository" target="_blank" class="underline hover:text-primary">Package Name</a>
+          <a :href="repository" target="_blank" class="underline hover:text-primary">{{ name }}</a>
         </li>
       </ul>
     </section>
@@ -20,6 +20,19 @@ import ogBanner from '../assets/images/og-banner.png';
 
 export default {
   setup () {
+    // Here we'll just add a mock object to represent package.json contents
+    // This should be replaced with the actual import and parsing of package.json
+    const packageJson = {
+      dependencies: {
+        'vue': 'https://github.com/vuejs/vue',
+        'axios': 'https://github.com/axios/axios'
+      },
+      devDependencies: {
+        'eslint': 'https://github.com/eslint/eslint',
+        'vite': 'https://github.com/vitejs/vite'
+      }
+    };
+    const dependencies = {...packageJson.dependencies, ...packageJson.devDependencies};
     definePageMeta({
       layout: 'default',
       pageName: 'Thank You',
