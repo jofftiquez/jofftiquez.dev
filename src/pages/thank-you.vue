@@ -21,17 +21,8 @@ import ogBanner from '../assets/images/og-banner.png';
 export default {
   setup () {
     // Here we'll just add a mock object to represent package.json contents
-    // This should be replaced with the actual import and parsing of package.json
-    const packageJson = {
-      dependencies: {
-        'vue': 'https://github.com/vuejs/vue',
-        'axios': 'https://github.com/axios/axios'
-      },
-      devDependencies: {
-        'eslint': 'https://github.com/eslint/eslint',
-        'vite': 'https://github.com/vitejs/vite'
-      }
-    };
+    // Import the actual package.json file
+    import packageJson from '../package.json';
     const dependencies = {...packageJson.dependencies, ...packageJson.devDependencies};
     definePageMeta({
       layout: 'default',
