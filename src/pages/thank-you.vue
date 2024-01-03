@@ -17,12 +17,11 @@
 <script>
 import { definePageMeta, useSeoMeta } from '#imports';
 import ogBanner from '../assets/images/og-banner.png';
+import packageJson from '../package.json';
 
 export default {
   setup () {
     // Here we'll just add a mock object to represent package.json contents
-    // Import the actual package.json file
-    import packageJson from '../package.json';
     const dependencies = {...packageJson.dependencies, ...packageJson.devDependencies};
     definePageMeta({
       layout: 'default',
