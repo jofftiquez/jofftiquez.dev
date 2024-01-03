@@ -53,8 +53,8 @@ import {
 export default {
   setup () {
     definePageMeta({
-      layout: 'default',
-      pageName: 'GUI',
+      layout: 'blank',
+      pageName: 'Home',
       order: 0,
     });
 
