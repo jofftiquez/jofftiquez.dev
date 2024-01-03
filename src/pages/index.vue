@@ -4,6 +4,7 @@
       <p>Hi, I'm Joff <span class="text-purple-500">&lt;3</span> Welcome!</p>
       <p>Type 'help' to see available commands.</p>
       <p>If you are not familiar with command line you can switch to <nuxt-link to="/gui" class="underline">gui mode</nuxt-link>.</p>
+      <p>See a list of open source acknowledgements on the <nuxt-link to="/thank-you" class="underline">thank-you page</nuxt-link>.</p>
     </div>
     <div id="output">
       <template v-for="(output, index) in outputList" :key="index">
