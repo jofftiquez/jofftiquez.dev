@@ -19,6 +19,8 @@ import { definePageMeta, useSeoMeta } from '#imports';
 import ogBanner from '../assets/images/og-banner.png';
 import packageJson from '../package.json';
 
+console.log('packageJson:', packageJson);
+
 export default {
   setup () {
     // Here we'll just add a mock object to represent package.json contents
