@@ -24,7 +24,7 @@ console.log('packageJson:', packageJson);
 export default {
   setup () {
     // Here we'll just add a mock object to represent package.json contents
-    const dependencies = {...packageJson.dependencies, ...packageJson.devDependencies};
+    const dependencies = Object.fromEntries([...Object.entries(packageJson.dependencies), ...Object.entries(packageJson.devDependencies)].map(([name, version]) => [name, version]));
     definePageMeta({
       layout: 'default',
       pageName: 'Thank You',
