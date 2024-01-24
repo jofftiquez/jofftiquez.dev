@@ -1,6 +1,6 @@
 {
   "name": "jofftiquez.dev",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "My personal website made with Nuxt.js 3 and DaisyUI",
   "productName": "Personal Website",
   "author": "Joff Tiquez <jofftiquez@gmail.com>",
@@ -28,7 +28,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.0.0",
     "eslint-webpack-plugin": "^3.1.1",
-    "nuxt": "^3.8.1",
+    "nuxt": "^3.9.3",
     "nuxt-gtag": "^0.5.7",
     "nuxt-headlessui": "^1.1.1",
     "rimraf": "^3.0.2"
@@ -37,7 +37,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "aos": "^3.0.0-beta.6",
     "axios": "^1.4.0",
-    "daisyui": "^3.9.4",
+    "daisyui": "^4.6.0",
     "date-fns": "^2.30.0",
     "postcss-custom-properties": "^13.1.5"
   },
