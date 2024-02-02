@@ -101,7 +101,6 @@ export default {
     });
 
     const route = useRoute();
-    console.warn('route', route.name);
     const isGui = computed(() => route.name === 'gui');
 
     return {
