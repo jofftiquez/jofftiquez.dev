@@ -33,13 +33,13 @@
           <nuxt-link class="btn btn-ghost" to="/uses">Uses</nuxt-link>
           <nuxt-link class="btn btn-ghost" to="/open-source">Open Source</nuxt-link>
         </div>
-        <button
+        <!-- <button
           class="btn btn-circle"
           @click="toggleTheme = !toggleTheme"
         >
           <i v-if="toggleTheme" class="las la-sun text-2xl"></i>
           <i v-else class="las la-moon text-2xl"></i>
-        </button>
+        </button> -->
       </div>
     </div>
     <slot />
