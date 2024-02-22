@@ -48,6 +48,47 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css',
+          media: 'none',
+          onload: "if(media!='all')media='all'",
+        },
+      ],
+      // TODO: load script only when needed
+      // randomize the effects in this level
+      script: [
+        {
+          type: 'text/javascript',
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
+          onload: "if(media!='all')media='all'",
+        },
+        {
+          type: 'text/javascript',
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js',
+          onload: "if(media!='all')media='all'",
+        },
+        {
+          type: 'text/javascript',
+          src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js',
+          onload: "if(media!='all')media='all'",
+        },
+        {
+          type: 'text/javascript',
+          src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.fog.min.js',
+          onload: "if(media!='all')media='all'",
+        },
+        {
+          type: 'text/javascript',
+          src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.clouds.min.js',
+          onload: "if(media!='all')media='all'",
+        },
+        {
+          type: 'text/javascript',
+          src: 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.trunk.min.js',
+          onload: "if(media!='all')media='all'",
+        },
+        {
+          type: 'text/javascript',
+          src: 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js',
+          onload: "if(media!='all')media='all'",
         },
       ],
     },
