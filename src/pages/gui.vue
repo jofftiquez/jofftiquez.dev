@@ -136,7 +136,7 @@ onMounted(() => {
           <h1 data-aos="fade-down" class="text-4xl md:text-7xl font-bold mb-6">Hi 👋</h1>
           <h1 data-aos="fade-down" class="text-4xl md:text-4xl font-bold mb-6">I'm Joff Tiquez</h1>
           <p class="mb-10">
-            I am a web developer from Manila 🇵🇭 For the past decade I am mostly focusing on web development using JavaScript. See my works <nuxt-link to="/open-source" class="underline underline-offset-2 hover:text-primary">here</nuxt-link>.
+            I am a human web developer from Manila 🇵🇭 For the past decade I am mostly focusing on web development using JavaScript. See my works <nuxt-link to="/open-source" class="underline underline-offset-2 hover:text-primary">here</nuxt-link>.
           </p>
           <div class="flex flex-wrap gap-8">
             <template v-for="(link, index) in socialLinks" :key="index">
