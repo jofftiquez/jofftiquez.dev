@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.9",
+    "@vercel/analytics": "^1.6.1",
     "aos": "^3.0.0-beta.6",
     "axios": "^1.4.0",
     "daisyui": "^4.6.0",
