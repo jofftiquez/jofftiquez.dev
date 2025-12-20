@@ -6,7 +6,14 @@
       <p>A collection of component and plugins for Stripe</p>
       <div class="flex gap-2">
         <a href="https://vuestripe.com" target="_blank" class="underline underline-offset-2 hover:text-primary">Website</a>
-        <a href="https://github.com/vue-stripe/vue-stripe" target="_blank" class="underline underline-offset-2 hover:text-primary">1K stars on GitHub</a>
+        <a href="https://github.com/vue-stripe/vue-stripe" target="_blank" class="underline underline-offset-2 hover:text-primary">1.1K stars on GitHub</a>
+      </div>
+    </section>
+    <section class="mb-8">
+      <h2 class="text-xl mb-2">lsnote</h2>
+      <p>A modern ls alternative made with Rust, featuring tree view, copy, git integration and more</p>
+      <div class="flex gap-2">
+        <a href="https://github.com/jofftiquez/lsnote" target="_blank" class="underline underline-offset-2 hover:text-primary">GitHub</a>
       </div>
     </section>
     <section class="mb-8">
@@ -62,7 +69,8 @@
 
 <script>
 import { definePageMeta, useSeoMeta } from '#imports';
-import ogBanner from '../assets/images/og-banner.png';
+
+const ogImage = 'https://jofftiquez.dev/og-banner.png';
 
 export default {
   setup () {
@@ -80,10 +88,10 @@ export default {
       ogTitle: metaTitle,
       description: metaDescription,
       ogDescription: metaDescription,
-      image: ogBanner,
-      ogImage: ogBanner,
-      url: 'https://jofftiquez.com/open-source',
-      ogUrl: 'https://jofftiquez.com/open-source',
+      ogImage: ogImage,
+      twitterImage: ogImage,
+      url: 'https://jofftiquez.dev/open-source',
+      ogUrl: 'https://jofftiquez.dev/open-source',
       twitterCard: 'summary_large_image',
     });
 

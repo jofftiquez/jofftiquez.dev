@@ -72,7 +72,8 @@
 
 <script>
 import { definePageMeta, useSeoMeta } from '#imports';
-import ogBanner from '../assets/images/og-banner.png';
+
+const ogImage = 'https://jofftiquez.dev/og-banner.png';
 
 export default {
   setup () {
@@ -90,10 +91,10 @@ export default {
       ogTitle: metaTitle,
       description: metaDescription,
       ogDescription: metaDescription,
-      image: ogBanner,
-      ogImage: ogBanner,
-      url: 'https://jofftiquez.com/uses',
-      ogUrl: 'https://jofftiquez.com/uses',
+      ogImage: ogImage,
+      twitterImage: ogImage,
+      url: 'https://jofftiquez.dev/uses',
+      ogUrl: 'https://jofftiquez.dev/uses',
       twitterCard: 'summary_large_image',
     });
 

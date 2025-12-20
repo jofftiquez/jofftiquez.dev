@@ -1,13 +1,6 @@
-// const LANG = 'en_US';
-// const TYPE = 'website';
-// const URL = 'https://hippocrades.com';
-// const SITE_NAME = 'hippocrades.com';
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // eslint-disable-next-line no-undef
 export default defineNuxtConfig({
-  preset: 'node-server',
-
   imports: {
     autoImport: false,
   },
@@ -16,15 +9,21 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-headlessui',
     'nuxt-gtag',
+    '@nuxtjs/sitemap',
   ],
+
+  site: {
+    url: 'https://jofftiquez.dev',
+    name: 'Joff Tiquez',
+  },
+
+  sitemap: {
+    strictNuxtContentPaths: true,
+  },
 
   gtag: {
     id: 'G-SDCBMR60FY',
   },
-
-  // nitro: {
-  //   preset: 'firebase',
-  // },
 
   srcDir: './src',
 
@@ -44,51 +43,86 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
+      meta: [
+        { name: 'author', content: 'Joff Tiquez' },
+        { name: 'robots', content: 'index, follow' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'Joff Tiquez' },
+        { property: 'og:locale', content: 'en_US' },
+        { name: 'twitter:site', content: '@jrtiquez' },
+        { name: 'twitter:creator', content: '@jrtiquez' },
+      ],
       link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         {
           rel: 'stylesheet',
           href: 'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css',
-          media: 'none',
-          onload: "if(media!='all')media='all'",
+          media: 'print',
+          onload: "this.media='all'",
         },
       ],
-      // TODO: load script only when needed
-      // randomize the effects in this level
       script: [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Joff Tiquez',
+            url: 'https://jofftiquez.dev',
+            image: 'https://jofftiquez.dev/og-banner.png',
+            jobTitle: 'Web Developer',
+            worksFor: {
+              '@type': 'Organization',
+              name: 'OSSPH',
+            },
+            sameAs: [
+              'https://github.com/jofftiquez',
+              'https://twitter.com/jrtiquez',
+              'https://linkedin.com/in/jofftiquez',
+              'https://stackoverflow.com/users/2889614/jofftiquez',
+            ],
+          }),
+        },
         {
           type: 'text/javascript',
           src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
-          onload: "if(media!='all')media='all'",
+          defer: true,
         },
         {
           type: 'text/javascript',
           src: 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js',
-          onload: "if(media!='all')media='all'",
+          defer: true,
         },
         {
           type: 'text/javascript',
           src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js',
-          onload: "if(media!='all')media='all'",
+          defer: true,
         },
         {
           type: 'text/javascript',
           src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.fog.min.js',
-          onload: "if(media!='all')media='all'",
+          defer: true,
         },
         {
           type: 'text/javascript',
           src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.clouds.min.js',
-          onload: "if(media!='all')media='all'",
+          defer: true,
         },
         {
           type: 'text/javascript',
           src: 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.trunk.min.js',
-          onload: "if(media!='all')media='all'",
+          defer: true,
         },
         {
           type: 'text/javascript',
           src: 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js',
-          onload: "if(media!='all')media='all'",
+          defer: true,
         },
       ],
     },

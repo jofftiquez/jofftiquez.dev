@@ -32,7 +32,7 @@ import { definePageMeta, useSeoMeta } from '#imports';
 import { format } from 'date-fns';
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import ogBanner from '../assets/images/og-banner.png';
+const ogImage = 'https://jofftiquez.dev/og-banner.png';
 import {
   PROXY_EMAIL,
   COMMAND_HELP,
@@ -66,10 +66,10 @@ export default {
       ogTitle: metaTitle,
       description: metaDescription,
       ogDescription: metaDescription,
-      image: ogBanner,
-      ogImage: ogBanner,
-      url: 'https://jofftiquez.com',
-      ogUrl: 'https://jofftiquez.com',
+      ogImage: ogImage,
+      twitterImage: ogImage,
+      url: 'https://jofftiquez.dev',
+      ogUrl: 'https://jofftiquez.dev',
       twitterCard: 'summary_large_image',
     });
 

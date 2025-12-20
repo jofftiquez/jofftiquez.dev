@@ -1,7 +1,8 @@
 <script setup>
 import { definePageMeta, useSeoMeta, onMounted } from '#imports';
 import { SOCIAL_LINKS } from '~/constants';
-import ogBanner from '../assets/images/og-banner.png';
+
+const ogImage = 'https://jofftiquez.dev/og-banner.png';
 
 definePageMeta({
   layout: 'default',
@@ -17,10 +18,10 @@ useSeoMeta({
   ogTitle: metaTitle,
   description: metaDescription,
   ogDescription: metaDescription,
-  image: ogBanner,
-  ogImage: ogBanner,
-  url: 'https://jofftiquez.com/gui',
-  ogUrl: 'https://jofftiquez.com/gui',
+  ogImage: ogImage,
+  twitterImage: ogImage,
+  url: 'https://jofftiquez.dev/gui',
+  ogUrl: 'https://jofftiquez.dev/gui',
   twitterCard: 'summary_large_image',
 });
 
