@@ -2,7 +2,7 @@
   <main class="mx-auto md:max-w-3xl px-5 py-5 md:py-7 min-h-screen">
     <h1 class="text-4xl mb-10">Open Source</h1>
     <section class="mb-8">
-      <h2 class="text-xl mb-2">Vue Stripe</h2>
+      <h2 class="text-xl mb-2 hover:text-primary">Vue Stripe</h2>
       <p>A collection of component and plugins for Stripe</p>
       <div class="flex gap-2">
         <a href="https://vuestripe.com" target="_blank" class="underline underline-offset-2 hover:text-primary">Website</a>
@@ -10,14 +10,14 @@
       </div>
     </section>
     <section class="mb-8">
-      <h2 class="text-xl mb-2">lsnote</h2>
+      <h2 class="text-xl mb-2 hover:text-primary">lsnote</h2>
       <p>A modern ls alternative made with Rust, featuring tree view, copy, git integration and more</p>
       <div class="flex gap-2">
         <a href="https://github.com/jofftiquez/lsnote" target="_blank" class="underline underline-offset-2 hover:text-primary">GitHub</a>
       </div>
     </section>
     <section class="mb-8">
-      <h2 class="text-xl mb-2">Open Source Software PH</h2>
+      <h2 class="text-xl mb-2 hover:text-primary">Open Source Software PH</h2>
       <p>The leading Open Source Software Community in the Philippines</p>
       <div class="flex gap-2">
         <a href="https://ossph.org" target="_blank" class="underline underline-offset-2 hover:text-primary">Website</a>
@@ -25,7 +25,7 @@
       </div>
     </section>
     <section class="mb-8">
-      <h2 class="text-xl mb-2">Faker.js UI</h2>
+      <h2 class="text-xl mb-2 hover:text-primary">Faker.js UI</h2>
       <p>A simple and intuitive UI for Faker.js</p>
       <div class="flex gap-2">
         <a href="https://fakerjsui.com/" target="_blank" class="underline underline-offset-2 hover:text-primary">Website</a>
@@ -33,7 +33,7 @@
       </div>
     </section>
     <section class="mb-8">
-      <h2 class="text-xl mb-2">Paymongo</h2>
+      <h2 class="text-xl mb-2 hover:text-primary">Paymongo</h2>
       <p>A lightweight Node.js client for Paymongo API</p>
       <div class="flex gap-2">
         <a href="https://paymongo.ossph.org/" target="_blank" class="underline underline-offset-2 hover:text-primary">Website</a>
@@ -41,7 +41,7 @@
       </div>
     </section>
     <section class="mb-8">
-      <h2 class="text-xl mb-2">Vue HTML To Paper</h2>
+      <h2 class="text-xl mb-2 hover:text-primary">Vue HTML To Paper</h2>
       <p>A Vue plugin for printing html elements</p>
       <div class="flex gap-2">
         <a href="https://mycurelabs.github.io/vue-html-to-paper/" target="_blank" class="underline underline-offset-2 hover:text-primary">Website</a>
@@ -49,16 +49,16 @@
       </div>
     </section>
     <section class="mb-8">
-      <h2 class="text-xl mb-2">Follow me</h2>
+      <h2 class="text-xl mb-2 hover:text-primary">Follow me</h2>
       <p>Follow me to be updated on my work and future projects</p>
       <div class="flex gap-2">
         <a href="https://github.com/jofftiquez" target="_blank" class="underline underline-offset-2 hover:text-primary">GitHub</a>
         <a href="https://twitter.com/jrtiquez" target="_blank" class="underline underline-offset-2 hover:text-primary">Twitter</a>
-        <a href="https://facebook.com/jofftiquez" target="_blank" class="underline underline-offset-2 hover:text-primary">Facebook</a>
+        <a href="https://facebook.com/joffrtiquez" target="_blank" class="underline underline-offset-2 hover:text-primary">Facebook</a>
       </div>
     </section>
     <section class="mb-8">
-      <h2 class="text-xl mb-2">Sponsors 🩷</h2>
+      <h2 class="text-xl mb-2 hover:text-primary">Sponsors 🩷</h2>
       <p>If you liked my projects or just simply want to support me, you can sponsor me on GitHub. Thank you 🙏</p>
       <div class="flex gap-2">
         <a href="https://github.com/sponsors/jofftiquez" target="_blank" class="underline underline-offset-2 hover:text-primary">GitHub Sponsors</a>

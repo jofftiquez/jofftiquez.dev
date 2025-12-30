@@ -6,16 +6,10 @@
       <h2 class="text-xl mb-2">Editor</h2>
       <ul>
         <li>
-          <a href="https://code.visualstudio.com/" target="_blank" class="underline hover:text-primary">Vistual Studio Code</a>
+          <a href="https://cursor.com" target="_blank" class="underline hover:text-primary">Cursor</a>
         </li>
         <li>
           Font: <a href="https://www.jetbrains.com/lp/mono/" target="_blank" class="underline hover:text-primary">JetBrains Mono</a>
-        </li>
-        <li>
-          Theme: <a href="https://github.com/catppuccin/catppuccin" target="_blank" class="underline hover:text-primary">Catppuccin</a>
-        </li>
-        <li>
-          Icons: <a href="https://github.com/catppuccin/vscode-icons" target="_blank" class="underline hover:text-primary">Catppuccin Icons</a>
         </li>
       </ul>
     </section>
@@ -24,7 +18,7 @@
       <h2 class="text-xl mb-2">Terminal</h2>
       <ul>
         <li>
-          <a href="https://iterm2.com/" target="_blank" class="underline hover:text-primary">iTerm 2</a>, running on <a href="https://github.com/romkatv/powerlevel10k" target="_blank" class="underline hover:text-primary">PowerLevel10K</a> prompt on <a href="https://www.zsh.org/" target="_blank" class="underline hover:text-primary">zsh</a>
+          <a href="https://ghostty.org/" target="_blank" class="underline hover:text-primary">Ghostty</a>, running on <a href="https://github.com/romkatv/powerlevel10k" target="_blank" class="underline hover:text-primary">PowerLevel10K</a> prompt on <a href="https://www.zsh.org/" target="_blank" class="underline hover:text-primary">zsh</a>
           </li>
         <li>
           Meslo Nerd Font
