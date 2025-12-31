@@ -14,3 +14,86 @@ body {
   color: #e5e3de !important;
   @apply: bg-base-100;
 }
+
+/* Accessibility: Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Accessibility: Visible focus indicators */
+*:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* Accessibility: Skip link styling */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 0.5rem 1rem;
+  background: #1f2937;
+  color: #f9fafb;
+  z-index: 100;
+  transition: top 0.3s ease;
+  text-decoration: none;
+  border-radius: 0 0 0.25rem 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Accessibility: Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Accessibility: High contrast mode support */
+@media (forced-colors: active) {
+  .terminal,
+  #terminal {
+    border: 1px solid CanvasText;
+  }
+
+  input,
+  button,
+  a {
+    border: 1px solid CanvasText;
+  }
+}
+
+/* Accessibility: Minimum touch target size for mobile */
+@media (pointer: coarse) {
+  button,
+  a,
+  input[type="submit"],
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

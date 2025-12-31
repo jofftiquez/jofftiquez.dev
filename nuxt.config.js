@@ -47,6 +47,7 @@ export default defineNuxtConfig({
         lang: 'en',
       },
       meta: [
+        { name: 'description', content: 'Personal website of Joff Tiquez - Web Developer, creator of Vue Stripe, and co-founder of OSSPH. Explore my projects, skills, and open source contributions.' },
         { name: 'author', content: 'Joff Tiquez' },
         { name: 'robots', content: 'index, follow' },
         { property: 'og:type', content: 'website' },

@@ -1,28 +1,76 @@
 <template>
-  <main id="terminal" class="p-4 text-white bg-base-200 h-full overflow-auto" @click="clickOnWrapper">
-    <div id="greentings" class="mb-3">
-      <p>Hi, I'm Joff <span class="text-purple-500">&lt;3</span> Welcome!</p>
+  <main
+    id="main-content"
+    role="application"
+    aria-label="Interactive terminal interface"
+    class="p-4 text-white bg-base-200 h-full overflow-auto"
+    @click="clickOnWrapper"
+  >
+    <!-- Accessibility: Hidden heading structure for screen readers -->
+    <h1 class="sr-only">Joff Tiquez - Terminal Interface</h1>
+
+    <!-- Welcome section -->
+    <section id="greetings" aria-labelledby="greeting-heading" class="mb-3">
+      <h2 id="greeting-heading" class="sr-only">Welcome Message</h2>
+      <p>Hi, I'm Joff <span class="text-purple-500" aria-label="heart">&lt;3</span> Welcome!</p>
       <p>Type 'help' to see available commands.</p>
-      <p>If you are not familiar with command line you can switch to <nuxt-link to="/gui" class="underline">gui mode</nuxt-link>.</p>
-    </div>
-    <div id="output">
+      <p>If you are not familiar with command line you can switch to <nuxt-link to="/gui" class="underline" aria-label="Switch to graphical user interface mode">gui mode</nuxt-link>.</p>
+    </section>
+
+    <!-- Command output area with live region for screen readers -->
+    <section id="output" role="log" aria-live="polite" aria-label="Command output history">
+      <h2 class="sr-only">Command History</h2>
       <template v-for="(output, index) in outputList" :key="index">
-        <span class="text-primary">guest@jofftiquez.dev <span>{{output.date}}</span><span class="text-secondary"> ~/ <span class="text-white">$</span></span><span class="text-white">&nbsp;{{output.commandInput}}</span></span>
-        <div v-html="output.html"/>
+        <div class="command-entry">
+          <span class="text-primary">
+            <span aria-hidden="true">guest@jofftiquez.dev</span>
+            <span class="sr-only">Command executed at</span>
+            <time :datetime="output.isoDate">{{output.date}}</time>
+            <span class="text-secondary" aria-hidden="true"> ~/ <span class="text-white">$</span></span>
+            <span class="text-white" aria-label="Command entered">&nbsp;{{output.commandInput}}</span>
+          </span>
+          <div v-html="output.html" role="status"/>
+        </div>
       </template>
-    </div>
-    <div id="command">
-      <form @submit.prevent="submit">
-        <span class="text-primary">guest@jofftiquez.dev <span>{{currentDate}}</span><span class="text-secondary"> ~/ <span class="text-white">$</span></span></span>
+    </section>
+
+    <!-- Command input area -->
+    <section id="command" aria-labelledby="command-heading">
+      <h2 id="command-heading" class="sr-only">Command Input</h2>
+      <form @submit.prevent="submit" role="search" aria-label="Terminal command input">
+        <label for="prompt-input" class="sr-only">
+          Enter terminal command. Type 'help' for available commands. Press Enter to execute.
+        </label>
+        <span class="text-primary" aria-hidden="true">
+          guest@jofftiquez.dev <span>{{currentDate}}</span>
+          <span class="text-secondary"> ~/ <span class="text-white">$</span></span>
+        </span>
         <input
           v-model="inputModel"
           autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
           id="prompt-input"
           ref="inputRef"
           type="text"
+          aria-describedby="terminal-help"
         />
-        <button type="submit" class="absolute left-[-1000px]"/>
+        <button type="submit" class="sr-only">Execute command</button>
       </form>
+      <!-- Help text for screen readers -->
+      <p id="terminal-help" class="sr-only">
+        Use keyboard shortcuts: Ctrl+L to clear terminal. Available commands: help, ls, go, contact, clear, gui.
+      </p>
+    </section>
+
+    <!-- Status announcements for screen readers -->
+    <div
+      role="status"
+      aria-live="assertive"
+      aria-atomic="true"
+      class="sr-only"
+    >
+      {{ announcement }}
     </div>
   </main>
 </template>
@@ -79,6 +127,7 @@ export default {
     const inputModel = ref('');
     const currentDate = ref(getCurrentDate());
     const outputList = ref([]);
+    const announcement = ref('');
 
     const availableCommands = [
       COMMAND_HELP,
@@ -117,7 +166,7 @@ export default {
     function submit () {
       // scroll to bottom
       setTimeout(() => {
-        const output = document.getElementById('terminal');
+        const output = document.getElementById('main-content');
         output.scrollTop = output.scrollHeight;
       }, 0);
 
@@ -125,6 +174,7 @@ export default {
       const commandObject = {
         commandInput,
         date: currentDate.value,
+        isoDate: new Date().toISOString(),
       };
 
       // if command is empty
@@ -140,10 +190,11 @@ export default {
       // if command is not empty and not
       // available display error
       if (!availableCommands.includes(commandInput)) {
-        commandObject.html = `<p class="text-red-500">Command '${commandInput}' not found. Type 'help' to see available commands.</p>`;
+        commandObject.html = `<p class="text-red-500" role="alert">Command '${commandInput}' not found. Type 'help' to see available commands.</p>`;
         outputList.value.push(commandObject);
         currentDate.value = getCurrentDate();
         inputModel.value = '';
+        announcement.value = `Error: Command ${commandInput} not found`;
         return;
       }
 
@@ -243,6 +294,7 @@ export default {
       outputList.value.push(commandObject);
       currentDate.value = getCurrentDate();
       inputModel.value = '';
+      announcement.value = `Command ${commandInput} executed successfully`;
     }
 
     function getCurrentDate () {
@@ -260,6 +312,7 @@ export default {
       inputRef,
       outputList,
       inputModel,
+      announcement,
     };
   },
 };
