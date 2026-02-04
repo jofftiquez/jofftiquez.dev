@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "tier": "spec",
+    "session": "markdown-blog",
+    "created": "2026-02-04",
+    "status": "draft"
+  },
+  "overview": {
+    "title": "Markdown Blog Feature",
+    "description": "Add a markdown-based blog system with /blogs listing and /blogs/:slug detail pages",
+    "problem": "Need a place to publish and share written content",
+    "users": ["end-users", "search-engines", "author"]
+  },
+  "approach": {
+    "framework": "@nuxt/content",
+    "rationale": "Native Nuxt 3 integration, built-in markdown parsing, query API, SEO helpers, sitemap compatible"
+  },
+  "frontmatter": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "string", "required": true },
+    "date": { "type": "date", "required": true },
+    "author": { "type": "string", "required": false, "default": "Joff Tiquez" },
+    "category": { "type": "string", "required": true },
+    "tags": { "type": "string[]", "required": false },
+    "image": { "type": "string", "required": false, "description": "Unsplash URL" },
+    "readingTime": { "type": "number", "required": false, "description": "Auto-calculated if not set" }
+  },
+  "requirements": {
+    "p0": [
+      "Install and configure @nuxt/content module",
+      "Create /src/content/blogs/ directory",
+      "Create /src/pages/blogs/index.vue - listing page",
+      "Create /src/pages/blogs/[slug].vue - post page",
+      "Visual cards with cover images",
+      "SEO meta tags on all pages",
+      "Responsive design",
+      "Add blog link to navbar",
+      "Add terminal command"
+    ],
+    "p1": [
+      "Filter by tags",
+      "Filter by category",
+      "Auto-generated TOC",
+      "Reading time display",
+      "Share buttons"
+    ],
+    "p2": [
+      "Syntax highlighting",
+      "Previous/Next navigation",
+      "Related posts"
+    ]
+  },
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "Setup @nuxt/content",
+      "description": "Install and configure the Nuxt Content module",
+      "files": ["package.json", "nuxt.config.js"],
+      "acceptance": [
+        "@nuxt/content installed via pnpm",
+        "Module registered in nuxt.config.js",
+        "Content directory configured as src/content"
+      ]
+    },
+    {
+      "id": "T2",
+      "title": "Create Content Directory Structure",
+      "description": "Set up content directory with sample blog post",
+      "files": ["src/content/blogs/", "src/content/blogs/hello-world.md"],
+      "acceptance": [
+        "Directory structure created",
+        "Sample post with all frontmatter fields",
+        "Post renders correctly"
+      ]
+    },
+    {
+      "id": "T3",
+      "title": "Create Blog Listing Page",
+      "description": "Build /blogs route with filterable card grid",
+      "files": [
+        "src/pages/blogs/index.vue",
+        "src/components/blog/BlogCard.vue",
+        "src/components/blog/BlogFilters.vue"
+      ],
+      "acceptance": [
+        "Displays all posts as cards",
+        "Cards show: image, title, date, category, tags, excerpt",
+        "Filter by tags works",
+        "Filter by category works",
+        "Sorted by date (newest first)",
+        "Responsive grid",
+        "SEO meta tags",
+        "definePageMeta with order: 4"
+      ]
+    },
+    {
+      "id": "T4",
+      "title": "Create Blog Post Page",
+      "description": "Build /blogs/:slug route for individual posts",
+      "files": [
+        "src/pages/blogs/[slug].vue",
+        "src/components/blog/BlogToc.vue",
+        "src/components/blog/BlogShare.vue",
+        "src/components/blog/BlogMeta.vue"
+      ],
+      "acceptance": [
+        "Renders markdown with prose styling",
+        "Cover image as hero",
+        "Shows title, date, author, category, tags",
+        "Reading time displayed",
+        "TOC from headings",
+        "Share buttons work",
+        "Dynamic SEO meta",
+        "OG image from cover",
+        "404 for invalid slugs"
+      ]
+    },
+    {
+      "id": "T5",
+      "title": "Update Navigation",
+      "description": "Add blog to site navigation",
+      "files": ["src/layouts/Default.vue", "src/constants/index.js"],
+      "acceptance": [
+        "Blog link in navbar",
+        "Terminal command added",
+        "Consistent with existing patterns"
+      ]
+    },
+    {
+      "id": "T6",
+      "title": "Styling & Polish",
+      "description": "Ensure consistent styling",
+      "files": ["src/assets/css/tailwind.css", "component files"],
+      "acceptance": [
+        "Tailwind + DaisyUI consistent",
+        "Prose styling via typography plugin",
+        "Dark mode support",
+        "Accessibility compliant",
+        "AOS animations"
+      ]
+    },
+    {
+      "id": "T7",
+      "title": "Testing & Verification",
+      "description": "Verify all functionality",
+      "files": [],
+      "acceptance": [
+        "All routes accessible",
+        "SEO tags verified",
+        "Sitemap includes posts",
+        "Mobile responsive",
+        "Links work",
+        "Filters work",
+        "Share buttons work"
+      ]
+    }
+  ],
+  "successCriteria": [
+    "/blogs route displays all posts as cards",
+    "/blogs/:slug renders markdown posts",
+    "Markdown files auto-discovered",
+    "Posts filterable by tags and categories",
+    "Proper SEO meta tags",
+    "Posts in sitemap",
+    "TOC auto-generated",
+    "Reading time displayed",
+    "Share buttons functional",
+    "Blog in navbar and terminal",
+    "Cover images display correctly"
+  ],
+  "dependencies": {
+    "add": ["@nuxt/content"],
+    "existing": ["@tailwindcss/typography", "@nuxtjs/sitemap"]
+  },
+  "fileStructure": {
+    "new": [
+      "src/content/blogs/",
+      "src/pages/blogs/index.vue",
+      "src/pages/blogs/[slug].vue",
+      "src/components/blog/BlogCard.vue",
+      "src/components/blog/BlogFilters.vue",
+      "src/components/blog/BlogToc.vue",
+      "src/components/blog/BlogShare.vue",
+      "src/components/blog/BlogMeta.vue"
+    ],
+    "modify": [
+      "package.json",
+      "nuxt.config.js",
+      "src/layouts/Default.vue",
+      "src/constants/index.js"
+    ]
+  },
+  "testing": {
+    "unit": [
+      "BlogCard component renders",
+      "BlogFilters works",
+      "Reading time utility"
+    ],
+    "integration": [
+      "/blogs loads posts",
+      "/blogs/:slug loads correct post",
+      "Filtering works",
+      "SEO tags correct"
+    ],
+    "manual": [
+      "Visual inspection desktop/mobile",
+      "Lighthouse SEO audit",
+      "Social preview testing",
+      "Sitemap verification"
+    ]
+  }
+}
