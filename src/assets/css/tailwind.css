@@ -12,7 +12,7 @@
 body {
   font-family: 'JetBrains Mono', monospace;
   color: #e5e3de !important;
-  @apply: bg-base-100;
+  @apply bg-base-100;
 }
 
 /* Accessibility: Screen reader only utility */
@@ -41,6 +41,15 @@ body {
 *:focus-visible {
   outline: 2px solid #60a5fa;
   outline-offset: 2px;
+}
+
+/* Terminal input - no focus outline for seamless terminal experience */
+#prompt-input,
+#prompt-input:focus,
+#prompt-input:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 /* Accessibility: Skip link styling */
@@ -96,4 +105,113 @@ body {
     min-height: 44px;
     min-width: 44px;
   }
+}
+
+/* Prose dark mode enhancements */
+.prose-invert {
+  --tw-prose-body: #e5e3de;
+  --tw-prose-headings: #f9fafb;
+  --tw-prose-lead: #d1d5db;
+  --tw-prose-links: #8ae234;
+  --tw-prose-bold: #f9fafb;
+  --tw-prose-counters: #9ca3af;
+  --tw-prose-bullets: #6b7280;
+  --tw-prose-hr: #374151;
+  --tw-prose-quotes: #d1d5db;
+  --tw-prose-quote-borders: #374151;
+  --tw-prose-captions: #9ca3af;
+  --tw-prose-code: #f9fafb;
+  --tw-prose-pre-code: #e5e7eb;
+  --tw-prose-pre-bg: #1f2937;
+  --tw-prose-th-borders: #4b5563;
+  --tw-prose-td-borders: #374151;
+}
+
+/* Enhanced prose styling for blog content */
+.prose {
+  max-width: none;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  scroll-margin-top: 2rem;
+}
+
+.prose a {
+  text-decoration: underline;
+  text-decoration-color: #8ae234;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.prose a:hover {
+  color: #8ae234;
+}
+
+.prose code {
+  background-color: rgba(138, 226, 52, 0.1);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.prose pre {
+  background-color: #282a36;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #f8f8f2;
+}
+
+/* Shiki/syntax highlighting - ensure readable colors */
+.prose pre code .line {
+  color: #f8f8f2;
+}
+
+/* String tokens - bright green/yellow for visibility */
+.prose pre code :is(.token.string, [style*="--shiki-dark:#"]) {
+  color: inherit;
+}
+
+/* Fallback colors for syntax tokens if theme doesn't load */
+.prose pre code .token.comment { color: #6272a4; }
+.prose pre code .token.string { color: #f1fa8c; }
+.prose pre code .token.keyword { color: #ff79c6; }
+.prose pre code .token.function { color: #50fa7b; }
+.prose pre code .token.number { color: #bd93f9; }
+.prose pre code .token.operator { color: #ff79c6; }
+.prose pre code .token.punctuation { color: #f8f8f2; }
+
+.prose img {
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose blockquote {
+  border-left-color: #8ae234;
+  font-style: italic;
+}
+
+/* Blog card enhancements */
+.card:focus-within {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* Filter button enhancements */
+.badge:focus,
+.select:focus,
+button:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
 }

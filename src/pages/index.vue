@@ -25,7 +25,7 @@
           <span class="text-primary">
             <span aria-hidden="true">guest@jofftiquez.dev</span>
             <span class="sr-only">Command executed at</span>
-            <time :datetime="output.isoDate">{{output.date}}</time>
+            <time :datetime="output.isoDate">&nbsp;{{output.date}}</time>
             <span class="text-secondary" aria-hidden="true"> ~/ <span class="text-white">$</span></span>
             <span class="text-white" aria-label="Command entered">&nbsp;{{output.commandInput}}</span>
           </span>
@@ -94,6 +94,7 @@ import {
   COMMAND_CONTACT,
   COMMAND_CLEAR,
   COMMAND_PRETTY_MODE,
+  COMMAND_BLOGS,
   SOCIAL_LINKS_NAMES,
   SOCIAL_LINKS,
 } from '~/constants';
@@ -141,6 +142,7 @@ export default {
       COMMAND_CONTACT,
       COMMAND_CLEAR,
       COMMAND_PRETTY_MODE,
+      COMMAND_BLOGS,
     ];
 
     const goCommands = [
@@ -204,7 +206,7 @@ export default {
           <div>
             <div class="mb-4">
               <p>Syntax: <code>&lt;command&gt;</code> <code>&lt;options&gt;</code></p>
-              <p>Commands: <b>go</b>, <b>contact</b>, <b>clear</b>, <b>gui</b></p>
+              <p>Commands: <b>go</b>, <b>contact</b>, <b>clear</b>, <b>gui</b>, <b>blogs</b></p>
             </div>
 
             <div class="mb-4">
@@ -232,7 +234,12 @@ export default {
               <p>The <b>gui</b> command - Switch to GUI mode.</p>
               <p class="indent-3">Usage: <b>gui</b></p>
             </div>
-            
+
+            <div class="mb-4">
+              <p>The <b>blogs</b> command - Navigate to blog posts.</p>
+              <p class="indent-3">Usage: <b>blogs</b></p>
+            </div>
+
             <div class="mb-4">
               <p>Keyboard: <code>CTRL + L</code> - Clear the terminal.</p>
             </div>
@@ -291,6 +298,12 @@ export default {
         return;
       }
 
+      // if command is blogs navigate to blogs page
+      if (commandInput === COMMAND_BLOGS) {
+        router.push('/blogs');
+        return;
+      }
+
       outputList.value.push(commandObject);
       currentDate.value = getCurrentDate();
       inputModel.value = '';
@@ -327,5 +340,12 @@ export default {
   outline: none;
   color: #fff;
   padding-left: 10px;
+  height: 21px;
+}
+
+#prompt-input:focus,
+#prompt-input:focus-visible {
+  outline: none !important;
+  outline-offset: 0 !important;
 }
 </style>

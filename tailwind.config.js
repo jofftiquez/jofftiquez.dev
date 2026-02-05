@@ -45,9 +45,9 @@ module.exports = {
     ],
   },
   plugins: [
-    '@tailwindcss/forms',
-    '@tailwindcss/container-queries',
-    '@tailwindcss/typography',
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/container-queries'),
+    require('@tailwindcss/typography'),
     require('daisyui'),
   ],
 };

@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-undef
 export default defineNuxtConfig({
   imports: {
-    autoImport: false,
+    autoImport: true,
   },
 
   modules: [
@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     'nuxt-headlessui',
     'nuxt-gtag',
     '@nuxtjs/sitemap',
+    '@nuxt/content',
   ],
 
   site: {
@@ -18,7 +19,33 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    strictNuxtContentPaths: true,
+    urls: async () => {
+      // This is a simple approach - in production the content will be crawled
+      return ['/blogs/hello-world'];
+    },
+  },
+
+  hooks: {
+    async 'content:file:beforeInsert'(document) {
+      // Auto-generate reading time if not set
+      if (document._extension === 'md' && !document.readingTime) {
+        const wordsPerMinute = 200;
+        const textContent = JSON.stringify(document.body);
+        const words = textContent.split(/\s+/).length;
+        document.readingTime = Math.ceil(words / wordsPerMinute);
+      }
+    },
+  },
+
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'dracula-soft',
+          langs: ['javascript', 'typescript', 'vue', 'html', 'css', 'json', 'bash', 'shell', 'python', 'java', 'php'],
+        },
+      },
+    },
   },
 
   gtag: {
