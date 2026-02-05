@@ -193,4 +193,14 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+
+  // Static site generation for Vercel
+  nitro: {
+    preset: 'static',
+  },
+
+  // Pre-render all routes
+  routeRules: {
+    '/**': { prerender: true },
+  },
 });
