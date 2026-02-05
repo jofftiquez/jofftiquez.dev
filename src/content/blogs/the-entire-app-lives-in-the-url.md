@@ -7,7 +7,7 @@ category: "Web Development"
 tags: ["javascript", "open source", "ai", "url-encoding", "side-project"]
 image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200"
 readingTime: 5
-draft: true
+draft: false
 ---
 
 # The Entire App Lives in the URL: Building Static Notes
