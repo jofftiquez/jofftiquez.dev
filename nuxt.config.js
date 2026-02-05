@@ -38,6 +38,10 @@ export default defineNuxtConfig({
   },
 
   content: {
+    database: {
+      type: 'libsql',
+      url: ':memory:',
+    },
     build: {
       markdown: {
         highlight: {
