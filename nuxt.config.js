@@ -40,7 +40,7 @@ export default defineNuxtConfig({
   content: {
     database: {
       type: 'libsql',
-      url: ':memory:',
+      url: 'file::memory:?cache=shared',
     },
     build: {
       markdown: {
