@@ -8,3 +8,14 @@ node_modules
 dist
 .DS_Store
 .vercel
+
+# Test output
+playwright-report/
+test-results/
+screenshots/
+
+# Nuxt Content cache
+.data/
+
+# Claude Code
+.claude/

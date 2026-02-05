@@ -11,6 +11,7 @@ export const COMMAND_GO_BENTO = 'go bento';
 export const COMMAND_CONTACT = 'contact';
 export const COMMAND_CLEAR = 'clear';
 export const COMMAND_PRETTY_MODE = 'gui';
+export const COMMAND_BLOGS = 'blogs';
 
 export const SOCIAL_LINKS = [
   {

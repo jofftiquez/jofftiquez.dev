@@ -25,6 +25,9 @@
                 <nuxt-link class="btn btn-ghost" to="/gui" role="menuitem">GUI</nuxt-link>
               </li>
               <li role="none">
+                <nuxt-link class="btn btn-ghost" to="/blogs" role="menuitem">Blogs</nuxt-link>
+              </li>
+              <li role="none">
                 <nuxt-link class="btn btn-ghost" to="/uses" role="menuitem">Uses</nuxt-link>
               </li>
               <li role="none">
@@ -41,6 +44,7 @@
           <div class="hidden lg:flex" role="menubar">
             <nuxt-link class="btn btn-ghost" to="/" role="menuitem">Terminal<b aria-hidden="true">_</b></nuxt-link>
             <nuxt-link class="btn btn-ghost" to="/gui" role="menuitem">GUI</nuxt-link>
+            <nuxt-link class="btn btn-ghost" to="/blogs" role="menuitem">Blogs</nuxt-link>
             <nuxt-link class="btn btn-ghost" to="/uses" role="menuitem">Uses</nuxt-link>
             <nuxt-link class="btn btn-ghost" to="/open-source" role="menuitem">Open Source</nuxt-link>
           </div>
