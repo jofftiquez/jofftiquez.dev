@@ -32,13 +32,11 @@
     "nuxt-headlessui": "^1.1.1"
   },
   "dependencies": {
-    "@libsql/client": "^0.14.0",
-    "@nuxt/content": "^3.11.0",
+    "@nuxt/content": "^2.13.4",
     "@tailwindcss/typography": "^0.5.9",
     "@vercel/analytics": "^1.6.1",
     "aos": "^3.0.0-beta.6",
     "axios": "^1.4.0",
-    "better-sqlite3": "npm:empty-npm-package@1.0.0",
     "daisyui": "^4.6.0",
     "date-fns": "^2.30.0",
     "postcss-custom-properties": "^13.1.5"
@@ -51,10 +49,5 @@
   "bugs": {
     "url": "https://github.com/jofftiquez/jofftiquez.dev/issues"
   },
-  "homepage": "https://github.com/jofftiquez/jofftiquez.dev#readme",
-  "pnpm": {
-    "overrides": {
-      "better-sqlite3": "npm:empty-npm-package@1.0.0"
-    }
-  }
+  "homepage": "https://github.com/jofftiquez/jofftiquez.dev#readme"
 }

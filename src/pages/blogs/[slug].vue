@@ -76,11 +76,10 @@ definePageMeta({
   layout: 'default',
 });
 
-// Fetch the blog post using Nuxt Content v3 queryCollection
+// Fetch the blog post using Nuxt Content v2 queryContent
 const { data: post } = await useAsyncData(`blog-post-${slug}`, () =>
-  queryCollection('blogs')
-    .path(`/blogs/${slug}`)
-    .first()
+  queryContent('blogs', slug)
+    .findOne()
 );
 
 // Get current URL for sharing

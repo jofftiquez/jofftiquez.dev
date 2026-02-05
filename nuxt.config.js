@@ -38,16 +38,14 @@ export default defineNuxtConfig({
   },
 
   content: {
-    database: {
-      type: 'libsql',
-      url: 'file::memory:?cache=shared',
+    highlight: {
+      theme: 'dracula-soft',
+      langs: ['javascript', 'typescript', 'vue', 'html', 'css', 'json', 'bash', 'shell', 'python', 'java', 'php', 'sql'],
     },
-    build: {
-      markdown: {
-        highlight: {
-          theme: 'dracula-soft',
-          langs: ['javascript', 'typescript', 'vue', 'html', 'css', 'json', 'bash', 'shell', 'python', 'java', 'php'],
-        },
+    markdown: {
+      toc: {
+        depth: 3,
+        searchDepth: 3,
       },
     },
   },

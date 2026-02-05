@@ -72,11 +72,11 @@ useSeoMeta({
 });
 
 // Fetch all blog posts from /blogs directory, sorted by date (newest first)
-// Nuxt Content v3 uses queryCollection with defined collection name
+// Nuxt Content v2 uses queryContent
 const { data: posts } = await useAsyncData('blog-posts', () =>
-  queryCollection('blogs')
-    .order('date', 'DESC')
-    .all()
+  queryContent('blogs')
+    .sort({ date: -1 })
+    .find()
 );
 
 const allPosts = ref(posts.value || []);
