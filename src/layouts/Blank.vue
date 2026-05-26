@@ -1,5 +1,5 @@
 <template>
-  <div data-theme="dark" class="bg-base-200 h-[100vh]">
+  <div data-theme="dark" class="bg-base-200 h-[100vh] noise-overlay">
     <!-- Accessibility: Hidden header for screen readers -->
     <header role="banner" class="sr-only">
       <h1>Joff Tiquez - Web Developer</h1>

@@ -1,5 +1,5 @@
 <template>
-  <div :data-theme="theme">
+  <div :data-theme="theme" class="noise-overlay">
     <!-- Accessibility: Main navigation header -->
     <header role="banner">
       <nav
