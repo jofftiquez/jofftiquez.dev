@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Prepares a fresh Amp orb: installs this repository's Node dependencies.
+# Must stay non-interactive and idempotent; it reruns on stale snapshots.
+set -euo pipefail
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+step() {
+  local label="$1"
+  shift
+  echo "==> $label"
+  local start=$SECONDS
+  "$@"
+  echo "<== $label ($((SECONDS - start))s)"
+}
+
+# Node.js and pnpm come with the orb base image; fail early if they are missing.
+for tool in node pnpm; do
+  command -v "$tool" >/dev/null || { echo "missing required tool: $tool" >&2; exit 1; }
+done
+echo "node $(node --version), pnpm $(pnpm --version)"
+
+# Also runs the `nuxt prepare` postinstall that generates .nuxt types.
+step "pnpm install" pnpm install --frozen-lockfile
+
+# Playwright's system libraries for Chromium. `--dry-run` exits non-zero only
+# when some are missing, so warm runs skip the `apt-get update` in install-deps.
+step "playwright system deps" bash -c \
+  'pnpm exec playwright install-deps --dry-run chromium || pnpm exec playwright install-deps chromium'
+
+# Downloads the Chromium build matching @playwright/test; no-op when present.
+step "playwright chromium" pnpm exec playwright install chromium

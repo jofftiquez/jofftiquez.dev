@@ -19,3 +19,6 @@ screenshots/
 
 # Claude Code
 .claude/
+
+# Amp orb portal state
+.amp/portals/
