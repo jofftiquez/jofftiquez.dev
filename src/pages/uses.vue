@@ -77,8 +77,8 @@ export default {
       order: 3,
     });
 
-    const metaTitle = 'Uses - Joff Tiquez';
-    const metaDescription = 'A list of tools and software I use for development and productivity';
+    const metaTitle = 'Uses: My Dev Setup, Tools and Hardware - Joff Tiquez';
+    const metaDescription = 'The editor, terminal, apps and hardware Joff Tiquez uses daily as a software engineer and startup CTO: Cursor, Ghostty, Raycast, MacBook Pro and more.';
 
     useSeoMeta({
       title: metaTitle,

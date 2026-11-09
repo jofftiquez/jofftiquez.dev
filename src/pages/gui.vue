@@ -10,8 +10,8 @@ definePageMeta({
   order: 1,
 });
 
-const metaTitle = 'Home - Joff Tiquez';
-const metaDescription = 'Web Developer from 🇵🇭';
+const metaTitle = 'About Joff Tiquez: Software Engineer, CTO, Open Source Advocate';
+const metaDescription = 'Meet Joff Tiquez: co-founder & CTO of Barako Technologies, VP of Engineering at MYCURE, creator of Vue Stripe, and founder of Open Source Software PH.';
 
 useSeoMeta({
   title: metaTitle,

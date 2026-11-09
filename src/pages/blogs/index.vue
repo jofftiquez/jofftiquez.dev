@@ -56,8 +56,8 @@ definePageMeta({
   order: 4,
 });
 
-const metaTitle = 'Blog - Joff Tiquez';
-const metaDescription = 'Read about web development, open source projects, and technology insights from Joff Tiquez. Explore articles on Vue.js, Nuxt, JavaScript, and more.';
+const metaTitle = 'Blog: Open Source, Vue.js and Startup Engineering - Joff Tiquez';
+const metaDescription = 'Notes from a startup CTO and open source maintainer: building Vue Stripe, growing OSSPH, hiring engineers, and shipping side projects with AI.';
 
 useSeoMeta({
   title: metaTitle,

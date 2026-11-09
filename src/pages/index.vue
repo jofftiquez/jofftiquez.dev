@@ -18,10 +18,7 @@
     <!-- Static bio, prerendered so crawlers and AI engines can read it -->
     <section id="whoami" aria-labelledby="whoami-heading" class="mb-3">
       <h2 id="whoami-heading" class="sr-only">About Joff Tiquez</h2>
-      <p class="text-primary" aria-hidden="true">
-        guest@jofftiquez.dev <span class="text-secondary">~/ <span class="text-white">$</span></span> <span class="text-white">whoami</span>
-      </p>
-      <p class="mt-2">Joff Tiquez, software engineer, startup CTO and open source advocate from Manila, Philippines. Fueled by kapeng barako, powered by open source.</p>
+      <p>Joff Tiquez, software engineer, startup CTO and open source advocate from Manila, Philippines. Fueled by kapeng barako, powered by open source.</p>
       <ul class="mt-2">
         <li>- Creator of <a href="https://vuestripe.com" target="_blank" rel="noopener" class="underline hover:text-primary">Vue Stripe</a>, the most popular Vue.js library for Stripe (1.1K+ GitHub stars, 60K+ monthly npm downloads)</li>
         <li>- <a href="https://docs.stripe.com/sdks/community" target="_blank" rel="noopener" class="underline hover:text-primary">Vue.js Community Expert for Stripe</a></li>
@@ -127,8 +124,8 @@ export default {
       order: 0,
     });
 
-    const metaTitle = 'Home - Joff Tiquez';
-    const metaDescription = 'Web Developer from 🇵🇭';
+    const metaTitle = 'Joff Tiquez: Startup CTO, Vue Stripe Creator, OSSPH Founder';
+    const metaDescription = 'Joff Tiquez is a software engineer and startup CTO from Manila. Creator of Vue Stripe, Vue.js Community Expert for Stripe, and founder of OSSPH.';
 
     useSeoMeta({
       title: metaTitle,

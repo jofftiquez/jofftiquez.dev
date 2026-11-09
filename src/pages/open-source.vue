@@ -80,8 +80,8 @@ export default {
       order: 2,
     });
 
-    const metaTitle = 'Open Source - Joff Tiquez';
-    const metaDescription = 'A collection of my open source projects';
+    const metaTitle = 'Open Source Projects: Vue Stripe, OSSPH and More - Joff Tiquez';
+    const metaDescription = 'Open source by Joff Tiquez: Vue Stripe, the most popular Vue.js library for Stripe, plus Faker.js UI, lsnote, Vue HTML To Paper and the OSSPH community.';
 
     useSeoMeta({
       title: metaTitle,

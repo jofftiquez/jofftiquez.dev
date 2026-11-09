@@ -6,7 +6,7 @@ test('home page renders the terminal and runs a command', async ({ page }) => {
 
   await page.goto('/');
 
-  await expect(page).toHaveTitle('Home - Joff Tiquez');
+  await expect(page).toHaveTitle('Joff Tiquez: Startup CTO, Vue Stripe Creator, OSSPH Founder');
   await expect(page.getByText("Hi, I'm Joff")).toBeVisible();
 
   // The page focuses the prompt once Vue has mounted, so this also waits for hydration.
