@@ -13,24 +13,7 @@
     <section id="greetings" aria-labelledby="greeting-heading" class="mb-3">
       <h2 id="greeting-heading" class="sr-only">Welcome Message</h2>
       <p>Hi, I'm Joff <span class="text-purple-500" aria-label="heart">&lt;3</span> Welcome!</p>
-    </section>
-
-    <!-- Static bio, prerendered so crawlers and AI engines can read it -->
-    <section id="whoami" aria-labelledby="whoami-heading" class="mb-3">
-      <h2 id="whoami-heading" class="sr-only">About Joff Tiquez</h2>
-      <p>Joff Tiquez, software engineer, startup CTO and open source advocate from Manila, Philippines. Fueled by kapeng barako, powered by open source.</p>
-      <ul class="mt-2">
-        <li>- Creator of <a href="https://vuestripe.com" target="_blank" rel="noopener" class="underline hover:text-primary">Vue Stripe</a>, the most popular Vue.js library for Stripe (1.1K+ GitHub stars, 60K+ monthly npm downloads)</li>
-        <li>- <a href="https://docs.stripe.com/sdks/community" target="_blank" rel="noopener" class="underline hover:text-primary">Vue.js Community Expert for Stripe</a></li>
-        <li>- Founder of <a href="https://ossph.org" target="_blank" rel="noopener" class="underline hover:text-primary">Open Source Software PH (OSSPH)</a>, since 2021</li>
-        <li>- Co-founder &amp; CTO, <a href="https://barako.tech" target="_blank" rel="noopener" class="underline hover:text-primary">Barako Technologies</a></li>
-        <li>- VP of Engineering, <a href="https://mycure.md" target="_blank" rel="noopener" class="underline hover:text-primary">MYCURE Inc.</a></li>
-        <li>- CTO, <a href="https://parmazip.ca" target="_blank" rel="noopener" class="underline hover:text-primary">Parmazip</a></li>
-      </ul>
-    </section>
-
-    <section aria-label="Getting started" class="mb-3">
-      <p>Type 'help' to see available commands.</p>
+      <p>Type 'help' to see available commands, or 'whoami' to learn about me.</p>
       <p>If you are not familiar with command line you can switch to <nuxt-link to="/gui" class="underline" aria-label="Switch to graphical user interface mode">gui mode</nuxt-link>.</p>
     </section>
 
@@ -76,7 +59,7 @@
       </form>
       <!-- Help text for screen readers -->
       <p id="terminal-help" class="sr-only">
-        Use keyboard shortcuts: Ctrl+L to clear terminal. Available commands: help, ls, go, contact, clear, gui.
+        Use keyboard shortcuts: Ctrl+L to clear terminal. Available commands: help, whoami, ls, go, contact, clear, gui, blogs.
       </p>
     </section>
 
@@ -112,6 +95,7 @@ import {
   COMMAND_CLEAR,
   COMMAND_PRETTY_MODE,
   COMMAND_BLOGS,
+  COMMAND_WHOAMI,
   SOCIAL_LINKS_NAMES,
   SOCIAL_LINKS,
 } from '~/constants';
@@ -160,6 +144,7 @@ export default {
       COMMAND_CLEAR,
       COMMAND_PRETTY_MODE,
       COMMAND_BLOGS,
+      COMMAND_WHOAMI,
     ];
 
     const goCommands = [
@@ -223,7 +208,12 @@ export default {
           <div>
             <div class="mb-4">
               <p>Syntax: <code>&lt;command&gt;</code> <code>&lt;options&gt;</code></p>
-              <p>Commands: <b>go</b>, <b>contact</b>, <b>clear</b>, <b>gui</b>, <b>blogs</b></p>
+              <p>Commands: <b>whoami</b>, <b>go</b>, <b>contact</b>, <b>clear</b>, <b>gui</b>, <b>blogs</b></p>
+            </div>
+
+            <div class="mb-4">
+              <p>The <b>whoami</b> command - Learn who I am.</p>
+              <p class="indent-3">Usage: <b>whoami</b></p>
             </div>
 
             <div class="mb-4">
@@ -275,6 +265,25 @@ export default {
           console.warn('link found, should break', link.url);
           break;
         }
+      }
+
+      // if command is whoami display bio
+      if (commandInput === COMMAND_WHOAMI) {
+        const link = (url, label) => `<a href="${url}" target="_blank" rel="noopener" class="underline hover:text-primary">${label}</a>`;
+        commandObject.html = `
+          <div>
+            <p>I'm Joff Tiquez, a software engineer, startup CTO and open source advocate from Manila, Philippines. Fueled by kapeng barako, powered by open source.</p>
+            <ul class="mt-2">
+              <li>- Creator of ${link('https://vuestripe.com', 'Vue Stripe')}, the most popular Vue.js library for Stripe (1.1K+ GitHub stars, 60K+ monthly npm downloads)</li>
+              <li>- ${link('https://docs.stripe.com/sdks/community', 'Vue.js Community Expert for Stripe')}</li>
+              <li>- Founder of ${link('https://ossph.org', 'Open Source Software PH (OSSPH)')}, since 2021</li>
+              <li>- Co-founder &amp; CTO, ${link('https://barako.tech', 'Barako Technologies')}</li>
+              <li>- VP of Engineering, ${link('https://mycure.md', 'MYCURE Inc.')}</li>
+              <li>- Former CTO, ${link('https://www.linkedin.com/company/parmazip', 'Parmazip')}</li>
+            </ul>
+            <p class="mt-2">More at <a href="/about" class="underline hover:text-primary">/about</a>.</p>
+          </div>
+        `;
       }
 
       // if command is contact display email

@@ -18,6 +18,10 @@ test('home page renders the terminal and runs a command', async ({ page }) => {
   const output = page.getByRole('log');
   await expect(output).toContainText('The blogs command - Navigate to blog posts.');
 
+  await prompt.fill('whoami');
+  await prompt.press('Enter');
+  await expect(output).toContainText('Vue.js Community Expert for Stripe');
+
   await prompt.fill('nope');
   await prompt.press('Enter');
   await expect(output.getByRole('alert')).toHaveText("Command 'nope' not found. Type 'help' to see available commands.");
