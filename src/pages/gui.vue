@@ -142,7 +142,7 @@ onMounted(() => {
               In 2021 I founded <a href="https://ossph.org" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">Open Source Software PH (OSSPH)</a> to help Filipino developers make their first contributions and keep going.
             </p>
             <p>
-              These days I'm <b>Co-founder &amp; CTO</b> of <a href="https://barako.tech" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">Barako Technologies</a>, <b>VP of Engineering</b> at <a href="https://mycure.md" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">MYCURE Inc.</a>, and <b>CTO</b> of <a href="https://parmazip.ca" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">Parmazip</a>.
+              These days I'm <b>Co-founder &amp; CTO</b> of <a href="https://barako.tech" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">Barako Technologies</a> and <b>VP of Engineering</b> at <a href="https://mycure.md" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">MYCURE Inc.</a> Before that, I was <b>CTO</b> of <a href="https://www.linkedin.com/company/parmazip" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">Parmazip</a>, a telepharmacy startup in Canada.
             </p>
             <p>
               Off the keyboard: cats, cycling and rock climbing. <nuxt-link to="/open-source" class="underline underline-offset-2 hover:text-primary">See my open source work →</nuxt-link>

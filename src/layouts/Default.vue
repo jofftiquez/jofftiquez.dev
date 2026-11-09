@@ -33,6 +33,9 @@
               <li role="none">
                 <nuxt-link class="btn btn-ghost" to="/open-source" role="menuitem">Open Source</nuxt-link>
               </li>
+              <li role="none">
+                <nuxt-link class="btn btn-ghost" to="/about" role="menuitem">About</nuxt-link>
+              </li>
             </ul>
           </div>
           <nuxt-link class="btn btn-ghost normal-case md:text-xl" to="/" aria-label="jofftiquez.dev - Go to homepage">
@@ -47,6 +50,7 @@
             <nuxt-link class="btn btn-ghost" to="/blogs" role="menuitem">Blogs</nuxt-link>
             <nuxt-link class="btn btn-ghost" to="/uses" role="menuitem">Uses</nuxt-link>
             <nuxt-link class="btn btn-ghost" to="/open-source" role="menuitem">Open Source</nuxt-link>
+            <nuxt-link class="btn btn-ghost" to="/about" role="menuitem">About</nuxt-link>
           </div>
         <!-- <button
           class="btn btn-circle"
