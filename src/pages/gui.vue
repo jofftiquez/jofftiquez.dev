@@ -126,19 +126,28 @@ onMounted(() => {
 <template>
 
   <main id="gui-page" class="hero min-h-screen bg-base-100">
-    <div class="grid grid-cols-1 md:grid-cols-2 h-screen p-4 md:p-0">
-
-      <!-- <div class="hidden md:flex relative justify-center">
-        <img class="w-[500px] bottom-0 absolute" src="../assets/images/jofftiquez-compressed.png" alt="">
-      </div> -->
-
-      <div class="max-w-2xl ">
-        <div class="flex flex-col justify-center h-screen">
+    <div class="w-full min-h-screen px-5 md:px-8">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex flex-col justify-center min-h-screen pt-24 pb-12">
           <h1 data-aos="fade-down" class="text-4xl md:text-7xl font-bold mb-6">Hi 👋</h1>
           <h1 data-aos="fade-down" class="text-4xl md:text-4xl font-bold mb-6">I'm Joff Tiquez</h1>
-          <p class="mb-10">
-            I am a web developer from Manila 🇵🇭 For the past decade I am mostly focusing on web development using JavaScript. See my works <nuxt-link to="/open-source" class="underline underline-offset-2 hover:text-primary">here</nuxt-link>.
-          </p>
+          <div class="mb-10 space-y-4">
+            <p class="text-lg">
+              Software engineer, startup CTO and open source advocate from Manila, Philippines 🇵🇭. Fueled by kapeng barako, powered by open source.
+            </p>
+            <p>
+              I've been building for the web for more than a decade, mostly in JavaScript and Vue.js. In 2016 I published my first open source project. In 2017 I created <a href="https://vuestripe.com" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">Vue Stripe</a>, now the most popular Vue.js library for Stripe (1.1K+ GitHub stars, 60K+ monthly npm downloads). It's listed in <a href="https://docs.stripe.com/sdks/community" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">Stripe's official community libraries</a>, and I'm the <b>Vue.js Community Expert for Stripe</b>.
+            </p>
+            <p>
+              In 2021 I founded <a href="https://ossph.org" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">Open Source Software PH (OSSPH)</a> to help Filipino developers make their first contributions and keep going.
+            </p>
+            <p>
+              These days I'm <b>Co-founder &amp; CTO</b> of <a href="https://barako.tech" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">Barako Technologies</a>, <b>VP of Engineering</b> at <a href="https://mycure.md" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">MYCURE Inc.</a>, and <b>CTO</b> of <a href="https://parmazip.ca" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-primary">Parmazip</a>.
+            </p>
+            <p>
+              Off the keyboard: cats, cycling and rock climbing. <nuxt-link to="/open-source" class="underline underline-offset-2 hover:text-primary">See my open source work →</nuxt-link>
+            </p>
+          </div>
           <div class="flex flex-wrap gap-8">
             <template v-for="(link, index) in socialLinks" :key="index">
               <div

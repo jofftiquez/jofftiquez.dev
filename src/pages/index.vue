@@ -13,6 +13,26 @@
     <section id="greetings" aria-labelledby="greeting-heading" class="mb-3">
       <h2 id="greeting-heading" class="sr-only">Welcome Message</h2>
       <p>Hi, I'm Joff <span class="text-purple-500" aria-label="heart">&lt;3</span> Welcome!</p>
+    </section>
+
+    <!-- Static bio, prerendered so crawlers and AI engines can read it -->
+    <section id="whoami" aria-labelledby="whoami-heading" class="mb-3">
+      <h2 id="whoami-heading" class="sr-only">About Joff Tiquez</h2>
+      <p class="text-primary" aria-hidden="true">
+        guest@jofftiquez.dev <span class="text-secondary">~/ <span class="text-white">$</span></span> <span class="text-white">whoami</span>
+      </p>
+      <p class="mt-2">Joff Tiquez, software engineer, startup CTO and open source advocate from Manila, Philippines. Fueled by kapeng barako, powered by open source.</p>
+      <ul class="mt-2">
+        <li>- Creator of <a href="https://vuestripe.com" target="_blank" rel="noopener" class="underline hover:text-primary">Vue Stripe</a>, the most popular Vue.js library for Stripe (1.1K+ GitHub stars, 60K+ monthly npm downloads)</li>
+        <li>- <a href="https://docs.stripe.com/sdks/community" target="_blank" rel="noopener" class="underline hover:text-primary">Vue.js Community Expert for Stripe</a></li>
+        <li>- Founder of <a href="https://ossph.org" target="_blank" rel="noopener" class="underline hover:text-primary">Open Source Software PH (OSSPH)</a>, since 2021</li>
+        <li>- Co-founder &amp; CTO, <a href="https://barako.tech" target="_blank" rel="noopener" class="underline hover:text-primary">Barako Technologies</a></li>
+        <li>- VP of Engineering, <a href="https://mycure.md" target="_blank" rel="noopener" class="underline hover:text-primary">MYCURE Inc.</a></li>
+        <li>- CTO, <a href="https://parmazip.ca" target="_blank" rel="noopener" class="underline hover:text-primary">Parmazip</a></li>
+      </ul>
+    </section>
+
+    <section aria-label="Getting started" class="mb-3">
       <p>Type 'help' to see available commands.</p>
       <p>If you are not familiar with command line you can switch to <nuxt-link to="/gui" class="underline" aria-label="Switch to graphical user interface mode">gui mode</nuxt-link>.</p>
     </section>
