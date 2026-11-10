@@ -78,7 +78,7 @@
 </template>
 
 <script setup>
-import { definePageMeta, useSeoMeta } from '#imports';
+import { definePageMeta, useHead, useSeoMeta } from '#imports';
 
 const ogImage = 'https://jofftiquez.dev/og-banner.png';
 
@@ -100,5 +100,21 @@ useSeoMeta({
   twitterImage: ogImage,
   ogUrl: 'https://jofftiquez.dev/about',
   twitterCard: 'summary_large_image',
+});
+
+// The Person node itself lives in the site-wide graph in nuxt.config.js
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      '@id': 'https://jofftiquez.dev/about#profilepage',
+      url: 'https://jofftiquez.dev/about',
+      name: metaTitle,
+      isPartOf: { '@id': 'https://jofftiquez.dev/#website' },
+      mainEntity: { '@id': 'https://jofftiquez.dev/#person' },
+    }),
+  }],
 });
 </script>
